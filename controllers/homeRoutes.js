@@ -1,10 +1,18 @@
 const router = require("express").Router();
-const { User } = require("../models");
+const { User, Bids, Car } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
   //temp test
   try {
+    const carData = await Car.findAll({
+      include: [
+        {
+          model: Bids,
+          attributes: ["bidder_id", "seller_id"],
+        },
+      ],
+    });
     res.render("auctionPage");
   } catch (err) {
     res.status(500).json(err);
@@ -13,7 +21,21 @@ router.get("/", async (req, res) => {
 
 router.get("/bid/:id", withAuth, async (req, res) => {
   try {
-    res.render("bid");
+    const carData = await Car.findByPk(req.params.id, {
+      include: [
+        {
+          model: Bids,
+          attributes: ["bidder_id", "seller_id"],
+        },
+      ],
+    });
+
+    const car = carData.get({ plain: true });
+
+    res.render("bidPage", {
+      ...car,
+      logged_in: req.session.logged_in,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
