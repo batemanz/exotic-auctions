@@ -1,0 +1,26 @@
+[
+    {
+        "make": "Rolls Royce",
+        "model": "Phantom",
+        "year": 2022,
+        "vin": "NV123455",
+        "starting_price": 465000,
+        "bidding_price": 250
+    },
+    {
+        "make": "Mercedes",
+        "model": "F 015",
+        "year": 2015,
+        "vin": "AN123456",
+        "starting_price": 250000,
+        "bidding_price": 250
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Camaro",
+        "year": 1969,
+        "vin": "YXN12345",
+        "starting_price": 49000,
+        "bidding_price": 250
+    }
+]
