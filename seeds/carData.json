@@ -1,26 +1,42 @@
 [
     {
-        "make": "Rolls Royce",
-        "model": "Phantom",
-        "year": 2022,
+        "title": "2022 Rolls Royce Phantom",
         "vin": "NV123455",
-        "starting_price": 465000,
-        "bidding_price": 250
+        "miles": 17,
+        "fuel_type": "Gas",
+        "transmission": "Automatic",
+        "engine": "6.7 L V12",
+        "starting_bid": 250000,
+        "bid_increment": 100
     },
     {
-        "make": "Mercedes",
-        "model": "F 015",
-        "year": 2015,
+        "title": "2021 Mercedes-Benz AMG GT",
         "vin": "AN123456",
-        "starting_price": 250000,
-        "bidding_price": 250
+        "miles": 10000,
+        "fuel_type": "Gas",
+        "transmission": "Automatic",
+        "engine": "4.0 L V8",
+        "starting_bid": 75000,
+        "bid_increment": 100
     },
     {
-        "make": "Chevrolet",
-        "model": "Camaro",
-        "year": 1969,
+        "title": "1969 Chevrolet Camaro",
         "vin": "YXN12345",
-        "starting_price": 49000,
-        "bidding_price": 250
+        "miles": 92000,
+        "fuel_type": "Gas",
+        "transmission": "Manuel",
+        "engine": "3.8 L V6",
+        "starting_bid": 49000,
+        "bid_increment": 100
+    },
+    {
+        "title": "2017 Nissan GTR",
+        "vin": "LN123X456",
+        "miles": 85000,
+        "fuel_type": "Gas",
+        "transmission": "Automatic",
+        "engine": "3.8 L V6",
+        "starting_bid": 80000,
+        "bid_increment": 100
     }
 ]
