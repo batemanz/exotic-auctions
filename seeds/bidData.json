@@ -1,11 +1,7 @@
 [
     {
-        "car_id": 1
-    },
-    {
-        "bidder_id": 1
-    },
-    {
+        "car_id": 1,
+        "bidder_id": 1,
         "timestamp": null
     }
 ]
