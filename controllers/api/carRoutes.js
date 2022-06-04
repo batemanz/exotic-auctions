@@ -17,7 +17,7 @@ router.post('/', withAuth, async (req, res) => {
 router.put('/:id', withAuth, async (req, res) => {
   try {
     const updatedVehicle = await Car.update(req.body, {
-      where: { id: req.params.id, owner_id: req.session.user_id },
+      where: { id: req.params.id, seller_id: req.session.user_id },
     });
 
     res.status(200).json(updatedVehicle);
@@ -31,7 +31,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     const carData = await Car.destroy({
       where: {
         id: req.params.id,
-        owner_id: req.session.owner_id,
+        seller_id: req.session.owner_id,
       },
     });
 
