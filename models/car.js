@@ -11,18 +11,7 @@ Car.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    // make: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    // },
-    // model: {
-    //   type: DataTypes.STRING,
-    // },
-    // year: {
-    //   type: DataTypes.DATE,
-    //   allowNull: false,
-    //   defaultValue: DataTypes.NOW,
-    // },
+
     vin: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -60,7 +49,7 @@ Car.init(
           key: 'id',
         },
     },
-    seller: {
+    seller_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
