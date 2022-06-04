@@ -20,13 +20,13 @@ Bid.init(
       },
     },
     bidder_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'bidder',
-          key: 'id',
-        },
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'bidder',
+        key: 'id',
       },
+    },
     timestamp: {
       type: DataTypes.TIME, //TODO: Look at model that has timestamp.
     },
@@ -36,7 +36,7 @@ Bid.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'bidder',
+    modelName: 'bid',
   }
 );
 
