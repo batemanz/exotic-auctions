@@ -11,18 +11,18 @@ Car.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    make: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    model: {
-      type: DataTypes.STRING,
-    },
-    year: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
-    },
+    // make: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
+    // model: {
+    //   type: DataTypes.STRING,
+    // },
+    // year: {
+    //   type: DataTypes.DATE,
+    //   allowNull: false,
+    //   defaultValue: DataTypes.NOW,
+    // },
     vin: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -47,7 +47,7 @@ Car.init(
         type: DataTypes.STRING,
         allowNull: false,
     },
-    starting_price: {
+    starting_bid: {
       type: DataTypes.FLOAT,
     },
     bid_increment: {
@@ -59,6 +59,14 @@ Car.init(
           model: 'bid',
           key: 'id',
         },
+    },
+    seller: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: 'bidder',
+            key: 'id',
+          },
     },
   },
   {
