@@ -48,6 +48,10 @@ Car.init(
     seller_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'bidder',
+        key: 'id',
+      },
     },
   },
   {
