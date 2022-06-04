@@ -7,7 +7,8 @@
         "transmission": "Automatic",
         "engine": "6.7 L V12",
         "starting_bid": 250000,
-        "bid_increment": 100
+        "bid_increment": 100,
+        "seller_id": 1
     },
     {
         "title": "2021 Mercedes-Benz AMG GT",
@@ -17,7 +18,8 @@
         "transmission": "Automatic",
         "engine": "4.0 L V8",
         "starting_bid": 75000,
-        "bid_increment": 100
+        "bid_increment": 100,
+        "seller_id": 2
     },
     {
         "title": "1969 Chevrolet Camaro",
@@ -27,7 +29,8 @@
         "transmission": "Manuel",
         "engine": "3.8 L V6",
         "starting_bid": 49000,
-        "bid_increment": 100
+        "bid_increment": 100,
+        "seller_id": 3
     },
     {
         "title": "2017 Nissan GTR",
@@ -37,6 +40,7 @@
         "transmission": "Automatic",
         "engine": "3.8 L V6",
         "starting_bid": 80000,
-        "bid_increment": 100
+        "bid_increment": 100,
+        "seller_id": 1
     }
 ]
