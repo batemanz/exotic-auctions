@@ -1,17 +1,17 @@
 const router = require("express").Router();
-const { User, Bids, Car } = require("../models");
+const { Bidder, Car } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
   //temp test
   try {
     const carData = await Car.findAll({
-      include: [
-        {
-          model: Bids,
-          attributes: ["bidder_id", "seller_id"],
-        },
-      ],
+      // include: [
+      //   {
+      //     model: Bid,
+      //     attributes: ["id", "seller_id"],
+      //   },
+      // ],
     });
 
     const cars = carData.map((car) => car.get({ plain: true }));
@@ -28,12 +28,12 @@ router.get("/", async (req, res) => {
 router.get("/bid/:id", withAuth, async (req, res) => {
   try {
     const carData = await Car.findByPk(req.params.id, {
-      include: [
-        {
-          model: Bids,
-          attributes: ["bidder_id", "seller_id"],
-        },
-      ],
+      // include: [
+      //   {
+      //     model: Bid,
+      //     attributes: ["bidder_id", "seller_id"],
+      //   },
+      // ],
     });
 
     const car = carData.get({ plain: true });
@@ -50,14 +50,14 @@ router.get("/bid/:id", withAuth, async (req, res) => {
 router.get("/profile", withAuth, async (req, res) => {
   //temp test
   try {
-    const userData = await User.findByPk(req.session.user_id, {
+    const bidderData = await Bidder.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
     });
 
-    const user = userData.get({ plain: true });
+    const bidder = bidderData.get({ plain: true });
 
     res.render("profile", {
-      ...user,
+      ...bidder,
       logged_in: true,
     });
   } catch (err) {
