@@ -33,7 +33,7 @@ Bid.init(
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: false, //TODO: Change this to true?
     freezeTableName: true,
     underscored: true,
     modelName: 'bidder',
