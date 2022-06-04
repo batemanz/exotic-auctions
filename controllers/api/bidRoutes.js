@@ -1,11 +1,11 @@
 const router = require('express').Router();
 const req = require('express/lib/request');
-const { Bids } = require('../../models');
+const { Bid } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
     try {
-        const newBid = await Bids.create({
+        const newBid = await Bid.create({
             ...req.body,
             user_id: req.session.user_id
         });

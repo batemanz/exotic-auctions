@@ -1,7 +1,7 @@
-const router = require("express").Router();
-const { Bidder } = require("../../models");
+const router = require('express').Router();
+const { Bidder } = require('../../models');
 
-router.post("/", async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const bidderData = await Bidder.create(req.body);
 
@@ -16,7 +16,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.post("/login", async (req, res) => {
+router.post('/login', async (req, res) => {
   try {
     const bidderData = await Bidder.findOne({
       where: { email: req.body.email },
@@ -25,7 +25,7 @@ router.post("/login", async (req, res) => {
     if (!bidderData) {
       res
         .status(400)
-        .json({ message: "Wrong email/password, please try again" });
+        .json({ message: 'Wrong email/password, please try again' });
       return;
     }
 
@@ -34,7 +34,7 @@ router.post("/login", async (req, res) => {
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: "Wrong email/password, please try again" });
+        .json({ message: 'Wrong email/password, please try again' });
       return;
     }
 
@@ -42,14 +42,14 @@ router.post("/login", async (req, res) => {
       req.session.user_id = bidderData.id;
       req.session.logged_in = true;
 
-      res.json({ bidder: bidderData, message: "Successfully logged in!" });
+      res.json({ bidder: bidderData, message: 'Successfully logged in!' });
     });
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-router.post("/logout", (req, res) => {
+router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();
