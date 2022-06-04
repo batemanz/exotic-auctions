@@ -25,7 +25,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/bid/:id", withAuth, async (req, res) => {
+router.get("/cars/:id", withAuth, async (req, res) => {
   try {
     const carData = await Car.findByPk(req.params.id, {
       // include: [

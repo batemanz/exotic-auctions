@@ -1,8 +1,8 @@
 const router = require("express").Router();
-const userRoutes = require("./userRoutes");
+const bidderRoutes = require("./bidderRoutes");
 //const bidRoutes = require("./bidRoutes");
 
-router.use("/users", userRoutes);
+router.use("/bidders", bidderRoutes);
 //router.use("/bid", bidRoutes);
 
 module.exports = router;
