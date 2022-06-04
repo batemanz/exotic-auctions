@@ -1,9 +1,9 @@
 const sequelize = require("../config/connection");
-const { Car, Bidder, Transactions } = require("../models");
+const { Car, Bidder, Bid } = require("../models");
 
 const carData = require("./carData.json");
 const bidderData = require("./bidderData.json");
-const transactionData = require("./transactionData.json");
+const bidData = require("./bidData.json");
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -18,7 +18,7 @@ const seedDatabase = async () => {
     posts.push(
       await Post.create({
         ...post,
-        user_id: users[Math.floor(Math.random() * users.length)].id,
+        car_id: users[Math.floor(Math.random() * users.length)].id,
       })
     );
   }
