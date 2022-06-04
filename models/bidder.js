@@ -38,6 +38,7 @@ Bidder.init(
     payment_option: {
         type: DataTypes.STRING,
         allowNull: false,
+        defaultValue: 'card_payment'
     },
   },
   {

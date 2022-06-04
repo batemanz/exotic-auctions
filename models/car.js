@@ -44,10 +44,6 @@ Car.init(
     },
     current_bid: {
         type: DataTypes.FLOAT,
-        references: {
-          model: 'bid',
-          key: 'id',
-        },
     },
     seller_id: {
         type: DataTypes.INTEGER,
