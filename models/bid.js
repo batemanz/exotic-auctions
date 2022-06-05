@@ -36,7 +36,7 @@ Bid.init(
     timestamps: false, //TODO: Change this to true?
     freezeTableName: true,
     underscored: true,
-    modelName: 'bidder',
+    modelName: 'bid',
   }
 );
 
