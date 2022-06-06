@@ -82,6 +82,11 @@ ul {
   animation-duration: 1.5s;
 }
 
+.bidCard {
+  max-width: 400px;
+  text-align:center;
+}
+
 @keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
