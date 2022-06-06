@@ -9,19 +9,21 @@
     <title>Document</title>
 </head>
 <body>
+    <header>Bidding Details Page</header>
     <nav>
-        <ul>
-            <li>
+        <ul class="columns is-mobile is-centered is-multiline">
+            <li class="column">
                 <a href="/views/profile.handlebars">Profile</a>
             </li>
-            <li>
+            <li class="column">
                 <a href="/views/auctionPage.handlebars">Auction</a>
             </li>
-            <li>
+            <li class="column">
                 <a href="">logout</a>
             </li>
         </ul>
     </nav>
+
     <div>
         <div class="slideshow-container">
     
@@ -62,7 +64,7 @@
             <span class="dot" onclick="currentSlide(4)"></span> 
         </div>
     </div>
-    <div class="columns is-centered is-mobile is-multiline is-variable bidDetailsCont">
+    <div class="columns is-centered is-mobile is-multiline bidDetailsCont">
         <div class="column is-narrow lotDetailsContainer">
             <div class="detailsCard">
                 <h1>Lot Details</h1>
@@ -90,7 +92,7 @@
         </div>
         <div class="column is-narrow bidCardContainer">
             <div class="bidPageCard">
-                <h1>Lot Details</h1>
+                <h1>Bidding Details</h1>
                 <ul>
                     <li>
                         Current Bid:<span class="current_bid"></span>
@@ -109,7 +111,7 @@
 
                 <form action="">
                     <label for="bid">Please enter Bid at or higher than Min Bid</label><br>
-                    <input type="text" id="bid" name="bid" value="Enter Bid"><br><br>
+                    <input type="text" id="bid" name="bid" placeholder="Enter Bid"><br><br>
                     <input type="submit" value="Submit">
                 </form>
             </div>
