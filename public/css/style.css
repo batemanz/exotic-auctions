@@ -115,10 +115,32 @@ ul {
   margin:8px;
 }
 
+.bidPageCard, .detailsCard {
+  color: black;
+  font-weight:bolder;
+  background-image: linear-gradient(#e5d529bb, #9fc334bb);
+  border: black solid 2px;
+  border-radius: 20px;
+  margin:6px;
+  padding:8px;
+  width:fit-content;
+  text-align:center;
+  min-width:358px;
+  /* min-height:300px; */
+}
+
 .bidCard img {
   /* max-width: 400px; */
   border-radius:20px;
 }
+
+.bidDetailsCont {
+  background-image: linear-gradient(grey, black);
+  border: solid black 2px;
+  border-radius:20px;
+  margin:12px;
+  padding:2px;
+} 
 
 @keyframes fade {
   from {

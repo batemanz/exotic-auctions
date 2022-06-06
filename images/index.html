@@ -13,17 +13,84 @@
         <ul>
             <li>
                 <a href="/views/profile.handlebars">Profile</a>
-                </li>
-                <li>
-                    <a href="">logout</a>
-                </li>
-            </ul>
-        </nav>
-        <div class="columns is-multiline is-mobile is-variable bidCardContainer">
-            <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-fifth-fullhd bidCard">
-                <img src="../images/edit-2136.jpg" style="width:100%">
-                <h4 class="lotID">lot ID #</h4>
-                <h1 class="cardTitle">2017 Nissan GTR</h1>
+            </li>
+            <li>
+                <a href="/views/auctionPage.handlebars">Auction</a>
+            </li>
+            <li>
+                <a href="">logout</a>
+            </li>
+        </ul>
+    </nav>
+    <div>
+        <div class="slideshow-container">
+    
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 4</div>
+            <img src="../images/edit-2136.jpg" style="width:100%">
+            <div class="text">2017 Kawasaki Ninja ZX-6R 636</div>
+        </div>
+    
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 4</div>
+            <img src="../images/edit-2137.jpg" style="width:100%">
+            <div class="text">2017 Kawasaki Ninja ZX-6R 636</div>
+        </div>
+    
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 4</div>
+            <img src="../images/edit-2147.jpg" style="width:100%">
+            <div class="text">2017 Kawasaki Ninja ZX-6R 636</div>
+        </div>
+    
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 4</div>
+            <img src="../images/edit-2153.jpg" style="width:100%">
+            <div class="text">2017 Kawasaki Ninja ZX-6R 636</div>
+        </div>
+    
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+    
+        </div>
+        <br>
+    
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+            <span class="dot" onclick="currentSlide(4)"></span> 
+        </div>
+    </div>
+    <div class="columns is-centered is-mobile is-multiline is-variable bidDetailsCont">
+        <div class="column is-narrow lotDetailsContainer">
+            <div class="detailsCard">
+                <h1>Lot Details</h1>
+                <ul>
+                    <li>
+                        Vin:<span class="vin"></span>
+                    </li>
+                    <li>
+                        Miles:<span class="miles"></span>
+                    </li>
+                    <li>
+                        Fuel Type:<span class="fuel_type"></span>
+                    </li>
+                    <li>
+                        Transmission:<span class="transmission"></span>
+                    </li>
+                    <li>
+                        Engine:<span class="engine"></span>
+                    </li>
+                    <li>
+                        Title:<span class="title"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="column is-narrow bidCardContainer">
+            <div class="bidPageCard">
+                <h1>Lot Details</h1>
                 <ul>
                     <li>
                         Current Bid:<span class="current_bid"></span>
@@ -38,87 +105,16 @@
                         Time Remaining:<span class="time_remaining"></span>
                     </li>
                 </ul>
+                <button class="bidHistoryBtn">Bid History</button>
+
                 <form action="">
                     <label for="bid">Please enter Bid at or higher than Min Bid</label><br>
                     <input type="text" id="bid" name="bid" value="Enter Bid"><br><br>
-                    <input class="button is-success" type="submit" value="Submit">
-                </form>
-            </div>
-    
-           <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-fifth-fullhd bidCard">
-               <img src="../images/edit-2136.jpg" style="width:100%">
-               <h4 class="lotID">lot ID #</h4> 
-               <h1 class="cardTitle">2017 Nissan GTR</h1>
-                <ul>
-                    <li>
-                        Current Bid:<span class="current_bid"></span>
-                    </li>
-                    <li>
-                        Min Bid:<span class="min_bid"></span>
-                    </li>
-                    <li>
-                        Bid Increment:<span class="bid_increment"></span>
-                    </li>
-                    <li>
-                        Time Remaining:<span class="time_remaining"></span>
-                    </li>
-                </ul>
-                <form action="">
-                    <label for="bid">Please enter Bid at or higher than Min Bid</label><br>
-                    <input type="text" id="bid" name="bid" value="Enter Bid"><br><br>
-                    <input class="button is-success" type="submit" value="Submit">
-                </form>
-            </div>
-    
-            <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-fifth-fullhd bidCard">
-                <img src="../images/edit-2136.jpg" style="width:100%">
-                <h4 class="lotID">lot ID #</h4>
-                <h1 class="cardTitle">2017 Nissan GTR</h1>
-                <ul>
-                    <li>
-                        Current Bid:<span class="current_bid"></span>
-                    </li>
-                    <li>
-                        Min Bid:<span class="min_bid"></span>
-                    </li>
-                    <li>
-                        Bid Increment:<span class="bid_increment"></span>
-                    </li>
-                    <li>
-                        Time Remaining:<span class="time_remaining"></span>
-                    </li>
-                </ul>
-                <form action="">
-                    <label for="bid">Please enter Bid at or higher than Min Bid</label><br>
-                    <input type="text" id="bid" name="bid" value="Enter Bid"><br><br>
-                    <input class="button is-success" type="submit" value="Submit">
-                </form>
-            </div>
-    
-            <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-fifth-fullhd bidCard">
-                <img src="../images/edit-2136.jpg" style="width:100%">
-                <h4 class="lotID">lot ID #</h4>
-                <h1 class="cardTitle">2017 Nissan GTR</h1>
-                <ul>
-                    <li>
-                        Current Bid:<span class="current_bid"></span>
-                    </li>
-                    <li>
-                        Min Bid:<span class="min_bid"></span>
-                    </li>
-                    <li>
-                        Bid Increment:<span class="bid_increment"></span>
-                    </li>
-                    <li>
-                        Time Remaining:<span class="time_remaining"></span>
-                    </li>
-                </ul>
-                <form action="">
-                    <label for="bid">Please enter Bid at or higher than Min Bid</label><br>                    <input type="text" id="bid" name="bid" value="Enter Bid"><br><br>
-                    <input class="button is-success" type="submit" value="Submit">
+                    <input type="submit" value="Submit">
                 </form>
             </div>
         </div>
+    </div>
 </body>
 <script src="../public/js/bidPage.js"></script>
 </html>
