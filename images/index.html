@@ -1,122 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
     <link rel="stylesheet" href="../public/css/style.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>Bidding Details Page</header>
     <nav>
-        <ul class="columns is-mobile is-centered is-multiline">
-            <li class="column">
-                <a href="/views/profile.handlebars">Profile</a>
-            </li>
-            <li class="column">
-                <a href="/views/auctionPage.handlebars">Auction</a>
-            </li>
-            <li class="column">
-                <a href="">logout</a>
-            </li>
-        </ul>
+      <ul class="columns is-mobile is-centered is-multiline">
+        <li class="column">
+          <a href="/views/profile.handlebars">Profile</a>
+        </li>
+        <li class="column">
+          <a href="/views/auctionPage.handlebars">Auction</a>
+        </li>
+        <li class="column">
+          <a href="">logout</a>
+        </li>
+      </ul>
     </nav>
 
     <div>
-        <div class="slideshow-container">
-    
+      <div class="slideshow-container">
         <div class="mySlides fade">
-            <div class="numbertext">1 / 4</div>
-            <img src="../images/edit-2136.jpg" style="width:100%">
-            <div class="text">2017 Kawasaki Ninja ZX-6R 636</div>
+          <div class="numbertext">1 / 4</div>
+          <img src="../images/edit-2136.jpg" style="width: 100%" />
+          <div class="text">2017 Kawasaki Ninja ZX-6R 636</div>
         </div>
-    
+
         <div class="mySlides fade">
-            <div class="numbertext">2 / 4</div>
-            <img src="../images/edit-2137.jpg" style="width:100%">
-            <div class="text">2017 Kawasaki Ninja ZX-6R 636</div>
+          <div class="numbertext">2 / 4</div>
+          <img src="../images/edit-2137.jpg" style="width: 100%" />
+          <div class="text">2017 Kawasaki Ninja ZX-6R 636</div>
         </div>
-    
+
         <div class="mySlides fade">
-            <div class="numbertext">3 / 4</div>
-            <img src="../images/edit-2147.jpg" style="width:100%">
-            <div class="text">2017 Kawasaki Ninja ZX-6R 636</div>
+          <div class="numbertext">3 / 4</div>
+          <img src="../images/edit-2147.jpg" style="width: 100%" />
+          <div class="text">2017 Kawasaki Ninja ZX-6R 636</div>
         </div>
-    
+
         <div class="mySlides fade">
-            <div class="numbertext">4 / 4</div>
-            <img src="../images/edit-2153.jpg" style="width:100%">
-            <div class="text">2017 Kawasaki Ninja ZX-6R 636</div>
+          <div class="numbertext">4 / 4</div>
+          <img src="../images/edit-2153.jpg" style="width: 100%" />
+          <div class="text">2017 Kawasaki Ninja ZX-6R 636</div>
         </div>
-    
+
         <a class="prev" onclick="plusSlides(-1)">❮</a>
         <a class="next" onclick="plusSlides(1)">❯</a>
-    
-        </div>
-        <br>
-    
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span> 
-            <span class="dot" onclick="currentSlide(2)"></span> 
-            <span class="dot" onclick="currentSlide(3)"></span> 
-            <span class="dot" onclick="currentSlide(4)"></span> 
-        </div>
+      </div>
+      <br />
+
+      <div style="text-align: center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+      </div>
     </div>
     <div class="columns is-centered is-mobile is-multiline bidDetailsCont">
-        <div class="column is-narrow lotDetailsContainer">
-            <div class="detailsCard">
-                <h1>Lot Details</h1>
-                <ul>
-                    <li>
-                        Vin:<span class="vin"></span>
-                    </li>
-                    <li>
-                        Miles:<span class="miles"></span>
-                    </li>
-                    <li>
-                        Fuel Type:<span class="fuel_type"></span>
-                    </li>
-                    <li>
-                        Transmission:<span class="transmission"></span>
-                    </li>
-                    <li>
-                        Engine:<span class="engine"></span>
-                    </li>
-                    <li>
-                        Title:<span class="title"></span>
-                    </li>
-                </ul>
-            </div>
+      <div class="column is-narrow lotDetailsContainer">
+        <div class="detailsCard">
+          <h1>Lot Details</h1>
+          <ul>
+            <li>Vin:<span class="vin"></span></li>
+            <li>Miles:<span class="miles"></span></li>
+            <li>Fuel Type:<span class="fuel_type"></span></li>
+            <li>Transmission:<span class="transmission"></span></li>
+            <li>Engine:<span class="engine"></span></li>
+            <li>Title:<span class="title"></span></li>
+          </ul>
         </div>
-        <div class="column is-narrow bidCardContainer">
-            <div class="bidPageCard">
-                <h1>Bidding Details</h1>
-                <ul>
-                    <li>
-                        Current Bid:<span class="current_bid"></span>
-                    </li>
-                    <li>
-                        Min Bid:<span class="min_bid"></span>
-                    </li>
-                    <li>
-                        Bid Increment:<span class="bid_increment"></span>
-                    </li>
-                    <li>
-                        Time Remaining:<span class="time_remaining"></span>
-                    </li>
-                </ul>
-                <button class="bidHistoryBtn">Bid History</button>
+      </div>
+      <div class="column is-narrow bidCardContainer">
+        <div class="bidPageCard">
+          <h1>Bidding Details</h1>
+          <ul>
+            <li>Current Bid:<span class="current_bid"></span></li>
+            <li>Min Bid:<span class="min_bid"></span></li>
+            <li>Bid Increment:<span class="bid_increment"></span></li>
+            <li>Time Remaining:<span class="time_remaining"></span></li>
+          </ul>
+          <button class="bidHistoryBtn">Bid History</button>
 
-                <form action="">
-                    <label for="bid">Please enter Bid at or higher than Min Bid</label><br>
-                    <input type="text" id="bid" name="bid" placeholder="Enter Bid"><br><br>
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
+          <form action="">
+            <label for="bid">Please enter Bid at or higher than Min Bid</label
+            ><br />
+            <input
+              type="text"
+              id="bid"
+              name="bid"
+              placeholder="Enter Bid"
+            /><br /><br />
+            <input type="submit" value="Submit" />
+          </form>
         </div>
+      </div>
     </div>
-</body>
-<script src="../public/js/bidPage.js"></script>
+  </body>
+  <script src="../public/js/bidPage.js"></script>
 </html>
