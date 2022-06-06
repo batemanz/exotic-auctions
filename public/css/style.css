@@ -5,6 +5,8 @@
 body {
   font-family: Verdana, sans-serif;
   margin: 0;
+  padding:16px;
+  min-height: 100vh;
 }
 
 nav {
@@ -108,7 +110,7 @@ ul {
   text-align:center;
   border: black solid 2px;
   border-radius: 20px;
-  max-width:fit-content;
+  /* max-width:fit-content; */
   padding:8px;
   margin:8px;
 }
