@@ -157,6 +157,21 @@ ul {
   padding:2px;
 } 
 
+.loginForm {
+  background-image: linear-gradient(#e5d529, #9fc334);
+  font-size:28px;
+  font-weight:bolder;
+  max-width:fit-content;
+  padding:48px;
+  border: solid black 2px;
+  border-radius:20px;
+}
+
+.loginDiv {
+ text-align:center;
+ margin-top:30%;
+}
+
 @keyframes fade {
   from {
     opacity: 0.4;
