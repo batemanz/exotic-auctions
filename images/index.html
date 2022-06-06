@@ -8,30 +8,43 @@
     <title>Document</title>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li>
+                <a href="/views/profile.handlebars">Profile</a>
+            </li>
+            <li>
+                <a href="/views/auctionPage.handlebars">Auction</a>
+            </li>
+            <li>
+                <a href="">logout</a>
+            </li>
+        </ul>
+    </nav>
     <div>
         <div class="slideshow-container">
     
         <div class="mySlides fade">
             <div class="numbertext">1 / 4</div>
-            <img src="./edit-2136.jpg" style="width:100%">
+            <img src="../images/edit-2136.jpg" style="width:100%">
             <div class="text">2017 Kawasaki Ninja ZX-6R 636</div>
         </div>
     
         <div class="mySlides fade">
             <div class="numbertext">2 / 4</div>
-            <img src="./edit-2137.jpg" style="width:100%">
+            <img src="../images/edit-2137.jpg" style="width:100%">
             <div class="text">2017 Kawasaki Ninja ZX-6R 636</div>
         </div>
     
         <div class="mySlides fade">
             <div class="numbertext">3 / 4</div>
-            <img src="./edit-2147.jpg" style="width:100%">
+            <img src="../images/edit-2147.jpg" style="width:100%">
             <div class="text">2017 Kawasaki Ninja ZX-6R 636</div>
         </div>
     
         <div class="mySlides fade">
             <div class="numbertext">4 / 4</div>
-            <img src="./edit-2153.jpg" style="width:100%">
+            <img src="../images/edit-2153.jpg" style="width:100%">
             <div class="text">2017 Kawasaki Ninja ZX-6R 636</div>
         </div>
     
@@ -46,6 +59,58 @@
             <span class="dot" onclick="currentSlide(2)"></span> 
             <span class="dot" onclick="currentSlide(3)"></span> 
             <span class="dot" onclick="currentSlide(4)"></span> 
+        </div>
+    </div>
+    <div class="lotDetailsContainer">
+        <div class="detailsCard">
+            <h1>Lot Details</h1>
+            <ul>
+                <li>
+                    Vin:<span class="vin"></span>
+                </li>
+                <li>
+                    Miles:<span class="miles"></span>
+                </li>
+                <li>
+                    Fuel Type:<span class="fuel_type"></span>
+                </li>
+                <li>
+                    Transmission:<span class="transmission"></span>
+                </li>
+                <li>
+                    Engine:<span class="engine"></span>
+                </li>
+                <li>
+                    Title:<span class="title"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="bidCardContainer">
+        <div class="bidCard">
+            <h1>Lot Details</h1>
+            <ul>
+                <li>
+                    Current Bid:<span class="current_bid"></span>
+                </li>
+                <li>
+                    Min Bid:<span class="min_bid"></span>
+                </li>
+                <li>
+                    Bid Increment:<span class="bid_increment"></span>
+                </li>
+                <li>
+                    Time Remaining:<span class="time_remaining"></span>
+                </li>
+            </ul>
+
+            <button class="bidHistoryBtn">Bid History</button>
+
+            <form action="">
+                <label for="bid">Please enter Bid at or higher than Min Bid</label><br>
+                <input type="text" id="bid" name="bid" value="Enter Bid"><br><br>
+                <input type="submit" value="Submit">
+            </form>
         </div>
     </div>
 </body>
