@@ -24,17 +24,12 @@ const seedDatabase = async () => {
     );
   }
 
-  // for (const comment of commentData) {
-  //   await Comment.create({
-  //     ...comment,
-  //     user_id: users[Math.floor(Math.random() * users.length)].id,
-  //     post_id: posts[Math.floor(Math.random() * posts.length)].id,
-  //   });
-  // }
-
   for (const bid of bidData) {
     await Bid.create({
       ...bid,
+      car_id: cars[Math.floor(Math.random() * cars.length)].id,
+      bidder_id: bidders[Math.floor(Math.random() * bidders.length)].id,
+
     });
   }
 

@@ -45,6 +45,10 @@ Car.init(
     current_bid: {
       type: DataTypes.FLOAT,
     },
+    //end time for bids
+    time_end: {
+      type: DataTypes.DATE
+    },
     seller_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
