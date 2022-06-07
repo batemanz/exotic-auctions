@@ -8,6 +8,7 @@
         "engine": "6.7 L V12",
         "starting_bid": 250000,
         "bid_increment": 100,
+        "time_end": "2022-07-01 05:30:00",
         "seller_id": 1
     },
     {
@@ -19,6 +20,7 @@
         "engine": "4.0 L V8",
         "starting_bid": 75000,
         "bid_increment": 100,
+        "time_end": "2022-07-02 05:30:00",
         "seller_id": 2
     },
     {
@@ -30,6 +32,7 @@
         "engine": "3.8 L V6",
         "starting_bid": 49000,
         "bid_increment": 100,
+        "time_end": "2022-07-01 08:30:00",
         "seller_id": 3
     },
     {
@@ -41,6 +44,7 @@
         "engine": "3.8 L V6",
         "starting_bid": 80000,
         "bid_increment": 100,
+        "time_end": "2022-07-02 06:30:00",
         "seller_id": 1
     }
 ]
