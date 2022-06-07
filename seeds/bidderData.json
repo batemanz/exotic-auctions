@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Alexa",
+        "email": "alexa@yahoo.com",
+        "password": "password12345"
+    },
+    {
+        "name": "Sirius",
+        "email": "sirius@aol.com",
+        "password": "password12345"
+    },
+    {
+        "name": "Cortana",
+        "email": "cortana@hotmail.com",
+        "password": "password12345"
+    }
+]
