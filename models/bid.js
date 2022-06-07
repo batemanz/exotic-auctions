@@ -28,15 +28,14 @@ Bid.init(
         },
       },
     timestamp: {
-      type: DataTypes.TIME, //TODO: Look at model that has timestamp.
+      type: DataTypes.DATE, //TODO: Look at model that has timestamp.
     },
   },
   {
     sequelize,
-    timestamps: false, //TODO: Change this to true?
     freezeTableName: true,
     underscored: true,
-    modelName: 'bidder',
+    modelName: 'bid',
   }
 );
 
