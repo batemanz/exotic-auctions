@@ -17,45 +17,45 @@ Car.init(
       allowNull: false,
     },
     miles: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
     fuel_type: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     transmission: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     engine: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     title: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     starting_bid: {
       type: DataTypes.FLOAT,
     },
     bid_increment: {
-        type: DataTypes.FLOAT,
+      type: DataTypes.FLOAT,
     },
     current_bid: {
-        type: DataTypes.FLOAT,
+      type: DataTypes.FLOAT,
     },
     //end time for bids
     time_end: {
       type: DataTypes.DATE
     },
     seller_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'bidder',
-            key: 'id',
-          },
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'bidder',
+        key: 'id',
+      },
     },
   },
   {

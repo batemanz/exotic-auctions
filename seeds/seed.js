@@ -1,9 +1,9 @@
-const sequelize = require("../config/connection");
-const { Car, Bidder, Bid } = require("../models");
+const sequelize = require('../config/connection');
+const { Car, Bidder, Bid } = require('../models');
 
-const carData = require("./carData.json");
-const bidderData = require("./bidderData.json");
-const bidData = require("./bidData.json");
+const carData = require('./carData.json');
+const bidderData = require('./bidderData.json');
+const bidData = require('./bidData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -29,6 +29,7 @@ const seedDatabase = async () => {
       ...bid,
       car_id: cars[Math.floor(Math.random() * cars.length)].id,
       bidder_id: bidders[Math.floor(Math.random() * bidders.length)].id,
+
     });
   }
 
