@@ -1,33 +1,35 @@
-const sequelize = require("../config/connection");
-const { Car, Bidder, Transactions } = require("../models");
+const sequelize = require('../config/connection');
+const { Car, Bidder, Bid } = require('../models');
 
-const carData = require("./carData.json");
-const bidderData = require("./bidderData.json");
-const transactionData = require("./transactionData.json");
+const carData = require('./carData.json');
+const bidderData = require('./bidderData.json');
+const bidData = require('./bidData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  const users = await User.bulkCreate(userData, {
+  const bidders = await Bidder.bulkCreate(bidderData, {
     individualHooks: true,
     returning: true,
   });
-  const posts = [];
 
-  for (const post of postData) {
-    posts.push(
-      await Post.create({
-        ...post,
-        user_id: users[Math.floor(Math.random() * users.length)].id,
+  const cars = [];
+
+  for (const car of carData) {
+    cars.push(
+      await Car.create({
+        ...car,
+        seller_id: bidders[Math.floor(Math.random() * bidders.length)].id,
       })
     );
   }
 
-  for (const comment of commentData) {
-    await Comment.create({
-      ...comment,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
-      post_id: posts[Math.floor(Math.random() * posts.length)].id,
+  for (const bid of bidData) {
+    await Bid.create({
+      ...bid,
+      car_id: cars[Math.floor(Math.random() * cars.length)].id,
+      bidder_id: bidders[Math.floor(Math.random() * bidders.length)].id,
+
     });
   }
 
