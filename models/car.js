@@ -11,6 +11,9 @@ Car.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    car_img: {
+//TODO
+    },
 
     vin: {
       type: DataTypes.STRING,
@@ -60,7 +63,6 @@ Car.init(
   },
   {
     sequelize,
-    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'car',
