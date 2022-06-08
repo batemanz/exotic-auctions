@@ -34,7 +34,7 @@ const seedDatabase = async () => {
     });
   }
 
-  const images = await Image.bulkCreate(ImageData, {
+  const images = await Image.bulkCreate(imageData, {
     individualHooks: true,
     returning: true,
   });
