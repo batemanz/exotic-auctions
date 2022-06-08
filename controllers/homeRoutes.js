@@ -32,15 +32,14 @@ router.get('/', async (req, res) => {
 
 router.get('/cars/:id', async (req, res) => {
   try {
-    const carData = await Car.findByPk(req.params.id
-      // , {
-      // include: [
-      //   {
-      //     model: Bid,
-      //     attributes: ["bidder_id", "seller_id"],
-      //   },
-      // ],
-    // }
+    const carData = await Car.findByPk(req.params.id, {
+      include: [
+        {
+          model: Image,
+          attributes: ["url"],
+        },
+      ],
+    }
     );
 
     const car = carData.get({ plain: true });
