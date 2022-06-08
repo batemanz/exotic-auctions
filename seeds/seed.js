@@ -9,10 +9,16 @@ const imageData = require('./imageData.json');
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  const bidders = await Bidder.bulkCreate(bidderData, {
-    individualHooks: true,
-    returning: true,
-  });
+  // const bidders = await Bidder.bulkCreate(bidderData, {
+  //   individualHooks: true,
+  //   returning: true,
+  // });
+
+  for (const bidder of bidderData) {
+      await Bidder.create({
+        ...bidder,
+      });
+  }
 
   const cars = [];
 
@@ -20,24 +26,36 @@ const seedDatabase = async () => {
     cars.push(
       await Car.create({
         ...car,
-        seller_id: bidders[Math.floor(Math.random() * bidders.length)].id,
+        // seller_id: bidders[Math.floor(Math.random() * bidders.length)].id,
       })
     );
+  }
+
+  // for (const bid of bidData) {
+  //   await Bid.create({
+  //     ...bid,
+  //     car_id: cars[Math.floor(Math.random() * cars.length)].id,
+  //     bidder_id: bidders[Math.floor(Math.random() * bidders.length)].id,
+
+  //   });
+  // }
+
+  // const images = await Image.bulkCreate(imageData, {
+  //   individualHooks: true,
+  //   returning: true,
+  // });
+
+  for (const image of imageData) {
+    await Image.create({
+      ...image,
+    });
   }
 
   for (const bid of bidData) {
     await Bid.create({
       ...bid,
-      car_id: cars[Math.floor(Math.random() * cars.length)].id,
-      bidder_id: bidders[Math.floor(Math.random() * bidders.length)].id,
-
     });
   }
-
-  const images = await Image.bulkCreate(imageData, {
-    individualHooks: true,
-    returning: true,
-  });
 
   process.exit(0);
 };

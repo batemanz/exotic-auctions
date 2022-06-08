@@ -28,7 +28,7 @@
         "vin": "YXN12345",
         "miles": 92000,
         "fuel_type": "Gas",
-        "transmission": "Manuel",
+        "transmission": "Manual",
         "engine": "3.8 L V6",
         "starting_bid": 49000,
         "bid_increment": 100,

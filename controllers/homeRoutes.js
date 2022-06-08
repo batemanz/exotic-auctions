@@ -1,20 +1,25 @@
 const router = require('express').Router();
-const { Bidder, Car } = require('../models');
+const { Bidder, Car, Bid, Image } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   //temp test
   try {
     const carData = await Car.findAll({
-      // include: [
-      //   {
-      //     model: Bid,
-      //     attributes: ["id", "seller_id"],
-      //   },
-      // ],
+      include: [
+        {
+          model: Bid,
+          attributes: ["id", "bidder_id"],
+        },
+           {
+             model: Image,
+             attributes: ["url"],
+           }
+      ],
     });
 
     const cars = carData.map((car) => car.get({ plain: true }));
+    console.log(cars);
 
     res.render('auctionPage', {
       cars,
