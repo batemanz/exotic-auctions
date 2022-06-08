@@ -33,7 +33,7 @@ const signInFormHandler = async (event) => {
     if (name && email && password) {
         const response = await fetch('/api/bidders', {
             method: 'POST',
-            body: JSON.stringify({ email, password }),
+            body: JSON.stringify({ name, email, password }),
             headers: { 'Content-Type': 'application/json' },
         });
     
@@ -49,5 +49,5 @@ document
   .querySelector('.loginForm')
   .addEventListener('submit', loginFormHandler);
 document
-  .querySelector('.signupForm')
+  .querySelector('.signInForm')
   .addEventListener('submit', signInFormHandler);
