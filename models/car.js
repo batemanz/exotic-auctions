@@ -13,6 +13,7 @@ Car.init(
     },
     car_img: {
 //TODO
+      type: DataTypes.STRING,
     },
 
     vin: {
