@@ -1,9 +1,10 @@
 const sequelize = require('../config/connection');
-const { Car, Bidder, Bid } = require('../models');
+const { Car, Bidder, Bid, Image } = require('../models');
 
 const carData = require('./carData.json');
 const bidderData = require('./bidderData.json');
 const bidData = require('./bidData.json');
+const imageData = require('./imageData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -32,6 +33,11 @@ const seedDatabase = async () => {
 
     });
   }
+
+  const images = await Image.bulkCreate(ImageData, {
+    individualHooks: true,
+    returning: true,
+  });
 
   process.exit(0);
 };

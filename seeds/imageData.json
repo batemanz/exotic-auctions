@@ -1,0 +1,11 @@
+[
+    {
+        "car_id": 1,
+        "url": "https://mycarimagebucket.s3.us-west-2.amazonaws.com/RRPhantom_Img1.jpg"
+    },
+    {
+        "car_id": 1,
+        "url":"https://mycarimagebucket.s3.us-west-2.amazonaws.com/RRPhantom_Img2.jpg"
+    }
+    
+]
