@@ -22,7 +22,7 @@
             </h1>
             <ul>
                 <li>
-                    Current Bid:<span class="current_bid"></span>
+                    Current Bid:<span class="current_bid">{{format_dinero car.current_bid}}</span>
                 </li>
                 <li>
                     Min Bid:<span class="min_bid">{{format_dinero car.starting_bid }}</span>
@@ -31,7 +31,7 @@
                     Bid Increment:<span class="bid_increment">{{format_dinero car.bid_increment }}</span>
                 </li>
                 <li>
-                    Time Remaining:<span class="time_remaining"></span>
+                    Time Remaining:<span id="time-left-{{car.id}}" class="time_remaining"></span>
                 </li>
             </ul>
             <form action="">
@@ -39,6 +39,15 @@
                 <input type="text" id="bid" name="bid" value="Enter Bid"><br><br>
                 <input class="button is-success" type="submit" value="Submit">
             </form>
+            <script>
+                setInterval(() => {
+                    const el = document.getElementById('time-left-{{car.id}}')
+                    const endTime = luxon.DateTime.fromSeconds((new Date('{{car.time_end}}')).getTime() / 1000)
+                    const currTime = luxon.DateTime.fromSeconds((new Date()).getTime() / 1000)
+                    const diff = endTime.diff(currTime, ['days', 'hours', 'minutes', 'seconds'])
+                    el.innerText = `${diff.days}d, ${diff.hours}h, ${diff.minutes}m`
+                }, 1000)
+            </script>
         </div>
     {{/each}}
 </div>

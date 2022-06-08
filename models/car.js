@@ -11,6 +11,10 @@ Car.init(
       primaryKey: true,
       autoIncrement: true,
     },
+//     car_img: {
+// //TODO
+//       type: DataTypes.STRING,
+//     },
 
     vin: {
       type: DataTypes.STRING,
