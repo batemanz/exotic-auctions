@@ -15,7 +15,7 @@ Bidder.hasMany(Bid, {
 
 Bid.belongsTo(Car, {
   foreignKey: 'car_id',
-  onDelete: 'CASCADE',
+  // onDelete: 'CASCADE',
 });
 
 Bid.belongsTo(Bidder, {
