@@ -2,10 +2,10 @@
 <nav>
   <ul class='columns is-mobile is-centered is-multiline'>
     <li class='column'>
-      <a href='/views/profile.handlebars'>Profile</a>
+      <a href='/profile'>Profile</a>
     </li>
     <li class='column'>
-      <a href='/views/auctionPage.handlebars'>Auction</a>
+      <a href='/'>Auction</a>
     </li>
     <li class='column'>
       <a href=''>logout</a>
@@ -18,7 +18,7 @@
     <div class='mySlides fade'>
       <div class='numbertext'>1 / 4</div>
       <img src='../images/edit-2136.jpg' style='width: 100%' />
-      <div class='text'>2017 Kawasaki Ninja ZX-6R 636</div>
+      <div class='text'>{{title}}</div>
     </div>
 
     <div class='mySlides fade'>
@@ -56,12 +56,12 @@
     <div class='detailsCard'>
       <h1>Lot Details</h1>
       <ul>
-        <li>Vin:<span class='vin'></span></li>
-        <li>Miles:<span class='miles'></span></li>
-        <li>Fuel Type:<span class='fuel_type'></span></li>
-        <li>Transmission:<span class='transmission'></span></li>
-        <li>Engine:<span class='engine'></span></li>
-        <li>Title:<span class='title'></span></li>
+        <li>Vin:<span class='vin'>{{vin}}</span></li>
+        <li>Miles:<span class='miles'>{{miles}}</span></li>
+        <li>Fuel Type:<span class='fuel_type'>{{fuel_type}}</span></li>
+        <li>Transmission:<span class='transmission'>{{transmission}}</span></li>
+        <li>Engine:<span class='engine'>{{engine}}</span></li>
+        <li>Title:<span class='title'>{{title}}</span></li>
       </ul>
     </div>
   </div>
