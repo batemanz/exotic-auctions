@@ -8,7 +8,6 @@
         "engine": "6.7 L V12",
         "starting_bid": 250000,
         "bid_increment": 100,
-        "current_bid": 250100,
         "time_end": "2022-07-01 05:30:00",
         "seller_id": 1
     },
