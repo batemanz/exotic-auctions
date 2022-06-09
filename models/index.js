@@ -32,4 +32,8 @@ Image.belongsTo(Car, {
   foreignKey: 'car_id',
 });
 
+Bid.hasOne(Car, {
+  foreignKey: 'current_bid',
+});
+
 module.exports = { Car, Bid, Bidder, Image };
