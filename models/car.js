@@ -11,10 +11,6 @@ Car.init(
       primaryKey: true,
       autoIncrement: true,
     },
-//     car_img: {
-// //TODO
-//       type: DataTypes.STRING,
-//     },
 
     vin: {
       type: DataTypes.STRING,
@@ -47,7 +43,11 @@ Car.init(
       type: DataTypes.FLOAT,
     },
     current_bid: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'bid',
+        key: 'id',
+      },
     },
     //end time for bids
     time_end: {

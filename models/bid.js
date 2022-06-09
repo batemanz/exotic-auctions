@@ -30,6 +30,9 @@ Bid.init(
     timestamp: {
       type: DataTypes.DATE, //TODO: Look at model that has timestamp.
     },
+    bid: {
+      type: DataTypes.FLOAT,
+    },
   },
   {
     sequelize,
