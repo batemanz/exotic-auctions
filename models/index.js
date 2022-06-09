@@ -30,7 +30,6 @@ Car.hasMany(Image, {
 
 Image.belongsTo(Car, {
   foreignKey: 'car_id',
-  onDelete: 'CASCADE',
 });
 
 module.exports = { Car, Bid, Bidder, Image };
