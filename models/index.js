@@ -33,4 +33,8 @@ Image.belongsTo(Car, {
   onDelete: 'CASCADE',
 });
 
+Bid.hasOne(Car, {
+  foreignKey: 'current_bid',
+});
+
 module.exports = { Car, Bid, Bidder, Image };
