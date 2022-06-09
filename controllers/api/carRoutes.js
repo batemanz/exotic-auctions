@@ -6,7 +6,7 @@ router.post('/', withAuth, async (req, res) => {
   try {
     const newVehicle = await Car.create({
       ...req.body,
-      owner_id: req.session.owner_id,
+      owner_id: req.session.user_id,
     });
 
     res.status(200).json(newVehicle);
