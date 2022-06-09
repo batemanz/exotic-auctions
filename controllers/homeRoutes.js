@@ -18,7 +18,13 @@ router.get('/', async (req, res) => {
       ],
     });
 
-    const cars = carData.map((car) => car.get({ plain: true }));
+    const cars = carData.map((car) => {
+      const images = car.images || []
+      return {
+        ...car.get({ plain: true }),
+        img_url: (images[0] || {}).url
+      }
+    });
     console.log(cars);
 
     res.render('auctionPage', {
