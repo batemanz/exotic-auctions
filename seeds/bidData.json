@@ -2,6 +2,7 @@
     {
         "car_id": 1,
         "bidder_id": 1,
-        "timestamp": null
+        "timestamp": null,
+        "bid": 0
     }
 ]
