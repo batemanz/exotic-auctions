@@ -13,6 +13,8 @@ router.post('/', async (req, res) => {
       res.status(200).json(bidderData);
     });
   } catch (err) {
+    //added console log
+    console.error(err)
     res.status(400).json(err);
   }
 });
