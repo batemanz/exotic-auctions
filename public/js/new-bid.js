@@ -25,6 +25,7 @@ const createBid = async (event) => {
 
     const secondResponse = await fetch(`/api/cars/${car_id}`, {
       method: 'PUT',
+      body: JSON.stringify({ }),
       headers: { 'Content-Type': 'application/json' },
     });
 
@@ -35,8 +36,10 @@ const createBid = async (event) => {
     if (response.ok && secondResponse.ok) {
       document.location.replace('/');
       alert('success!');
-    } else {
-      alert('yabadabadoo!');
+    } else if (response.ok) {
+      alert('Only the bid worked!');
+    } else if (secondResponse.ok) {
+      alert('Only the car update worked!');
     }
   } else {
     alert('Invalid bid! Please re-enter your bid!');
