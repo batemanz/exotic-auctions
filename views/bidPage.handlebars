@@ -95,7 +95,11 @@
       <form action=''>
         <input type='hidden' name='car-id' value='{{id}}' />
         <input type='hidden' name='bidInc' value='{{bid_increment}}' />
+        {{#if current_bid}}
         <input type='hidden' name='currBid' value='{{current_bid}}' />
+        {{else}}
+        <input type='hidden' name='currBid' value='{{starting_bid}}' />
+        {{/if}}
         <label for='newBid'>Please enter Bid at or higher than Min Bid</label><br
         />
         <input

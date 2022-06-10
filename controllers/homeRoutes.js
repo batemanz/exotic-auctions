@@ -39,7 +39,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/cars/:id', async (req, res) => {
+router.get('/cars/:id', withAuth, async (req, res) => {
   try {
     const carData = await Car.findByPk(req.params.id, {
       include: [

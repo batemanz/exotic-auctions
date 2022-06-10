@@ -26,6 +26,7 @@ router.put('/:id', withAuth, async (req, res) => {
       }
     );
 
+    // console.log(req.session.user_id);
     console.log(updatedVehicle);
 
     res.status(200).json(updatedVehicle);
