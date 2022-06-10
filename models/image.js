@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Bid extends Model {}
+class Image extends Model {}
 
-Bid.init(
+Image.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -19,19 +19,9 @@ Bid.init(
         key: 'id',
       },
     },
-    bidder_id: {
-      type: DataTypes.INTEGER,
+    url: {
+      type: DataTypes.STRING,
       allowNull: false,
-      references: {
-        model: 'bidder',
-        key: 'id',
-      },
-    },
-    timestamp: {
-      type: DataTypes.DATE, //TODO: Look at model that has timestamp.
-    },
-    bid: {
-      type: DataTypes.FLOAT,
     },
   },
   {
@@ -39,8 +29,8 @@ Bid.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'bid',
+    modelName: 'image',
   }
 );
 
-module.exports = Bid;
+module.exports = Image;

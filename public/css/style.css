@@ -215,6 +215,22 @@ ul {
  margin-top:30%;
 }
 
+/* Added so signin form would also be styled */
+.signInForm {
+  background-image: linear-gradient(#e5d529, #9fc334);
+  font-size:28px;
+  font-weight:bolder;
+  max-width:fit-content;
+  padding:48px;
+  border: solid black 2px;
+  border-radius:20px;
+}
+
+.signInDiv {
+ text-align:center;
+ margin-top:30%;
+}
+
 @keyframes fade {
   from {
     opacity: 0.4;

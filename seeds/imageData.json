@@ -1,0 +1,22 @@
+[
+    {
+        "car_id": 1,
+        "url": "https://mycarimagebucket.s3.us-west-2.amazonaws.com/RRPhantom_Img1.jpg"
+    },
+    {
+        "car_id": 1,
+        "url":"https://mycarimagebucket.s3.us-west-2.amazonaws.com/RRPhantom_Img2.jpg"
+    },
+    {
+        "car_id": 2,
+        "url": "https://mycarimagebucket.s3.us-west-2.amazonaws.com/Mercedesbenz_img1.jpg"
+    },
+    {
+        "car_id": 3,
+        "url":"https://mycarimagebucket.s3.us-west-2.amazonaws.com/Chevy_img1.jpeg"
+    },
+    {
+        "car_id": 4,
+        "url":"https://mycarimagebucket.s3.us-west-2.amazonaws.com/GT_img1.jpg"
+    }
+]
