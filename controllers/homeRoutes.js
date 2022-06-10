@@ -75,6 +75,9 @@ router.get('/profile', withAuth, async (req, res) => {
   try {
     const bidderData = await Bidder.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
+      include: [
+        model
+      ]
     });
 
     const bidder = bidderData.get({ plain: true });

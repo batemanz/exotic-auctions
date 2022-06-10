@@ -17,9 +17,10 @@ router.post('/', withAuth, async (req, res) => {
 
 router.put('/:id', withAuth, async (req, res) => {
   try {
+
     const updatedVehicle = await Car.update(
       {
-        current_bid: req.session.user_id,
+        current_bid:,
       },
       {
         where: { id: req.params.id },
@@ -27,7 +28,7 @@ router.put('/:id', withAuth, async (req, res) => {
     );
 
     // console.log(req.session.user_id);
-    console.log(updatedVehicle);
+    // console.log(`current bid is ` + updatedVehicle);
 
     res.status(200).json(updatedVehicle);
   } catch (err) {
