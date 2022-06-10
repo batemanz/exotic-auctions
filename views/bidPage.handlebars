@@ -84,11 +84,12 @@
           >{{format_dinero bid_increment}}</span></li>
         <li>Time Remaining:<span class='time_remaining'></span></li>
       </ul>
-      <button class='bidHistoryBtn'>Bid History</button>
+      <button class='bidHistoryBtn' onclick="showHistory()">Bid History</button>
 
       <form action=''>
         <input type='hidden' name='car-id' value='{{id}}' />
         <input type='hidden' name='bidInc' value='{{bid_increment}}' />
+        <input type='hidden' name='currBid' value='{{current_bid}}' />
         <label for='newBid'>Please enter Bid at or higher than Min Bid</label><br
         />
         <input
@@ -101,6 +102,38 @@
         <button class='signUpBtn' type='submit'>Submit</button>
       </form>
     </div>
+  </div>
+</div>
+
+<div class="modal bid-history-modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title" style="color: white;">Bid History</p>
+      <button class="delete" onclick="closeHistory()" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Bid</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each bids as |bid|}}
+            <tr>
+              {{#if bid.timestamp}}
+                <td>{{format_date bid.timestamp}}</td>
+              {{else}}
+                <td>undefined</td>
+              {{/if}}
+              <td>{{format_dinero bid.bid}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </section>
   </div>
 </div>
 
