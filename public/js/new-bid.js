@@ -34,6 +34,7 @@ const createBid = async (event) => {
 
     if (response.ok && secondResponse.ok) {
       document.location.replace('/');
+      alert('success!');
     } else {
       alert('yabadabadoo!');
     }
