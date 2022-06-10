@@ -4,16 +4,20 @@ const createBid = async (event) => {
   const car_id = document.querySelector('input[name="car-id"]').value;
 
   const bid = document.querySelector('#newBid').value.trim();
-  const currBid = document.querySelector('#currBid').value;
-  const bidInc = document.querySelector('#bidInc').value;
+
+  const currBid = parseInt(
+    document.querySelector('input[name="currBid"]').value
+  );
+
+  const bidInc = parseInt(document.querySelector('input[name="bidInc"]').value);
 
   const reqBid = currBid + bidInc;
 
-  console.log(bid);
-  console.log(car_id);
-  console.log(typeof currBid);
-  console.log(typeof bidInc);
-  console.log(reqBid);
+  // console.log(bid);
+  // console.log(car_id);
+  // console.log(currBid);
+  // console.log(bidInc);
+  // console.log(reqBid);
 
   if (bid >= reqBid) {
     const response = await fetch('/api/bids', {

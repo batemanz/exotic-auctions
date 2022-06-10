@@ -44,6 +44,10 @@ router.get('/cars/:id', async (req, res) => {
           model: Image,
           attributes: ['url'],
         },
+        {
+          model: Bid,
+          attributes: ['bid', 'bidder_id'],
+        },
       ],
     });
 

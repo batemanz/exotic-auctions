@@ -70,17 +70,23 @@
       <h1>Bidding Details</h1>
       <ul>
         {{#if current_bid}}
-          <li>Current Bid:<span class='current_bid' id='currBid'>{{format_dinero
-                current_id
+          <li>Current Bid:<span class='current_bid'>{{format_dinero
+                bid.bid
               }}</span></li>
         {{else}}
-          <li>Current Bid:<span class='current_bid' id='currBid' value='0'>
-              No current bids...</span></li>
+          <li>Current Bid:<span class='current_bid' value='0'>{{format_dinero
+                starting_bid
+              }}</span></li>
         {{/if}}
-        <li>Min Bid:<span class='min_bid' id='minBid'></span></li>
+        {{!-- <li>Min Bid:<span
+            class='min_bid'
+            id='minBid'
+            value='({{starting_bid}}+{{bid_increment}})'
+          >({{format_dinero starting_bid}}+{{fomat_dinero bid_increment}})</span></li> --}}
         <li>Bid Increment:<span
             class='bid_increment'
-            id='bidInc'
+            {{! id='bidInc' }}
+            value='{{bid_increment}}'
           >{{format_dinero bid_increment}}</span></li>
         <li>Time Remaining:<span class='time_remaining'></span></li>
       </ul>
@@ -89,6 +95,7 @@
       <form action=''>
         <input type='hidden' name='car-id' value='{{id}}' />
         <input type='hidden' name='bidInc' value='{{bid_increment}}' />
+        <input type='hidden' name='currBid' value='{{starting_bid}}' />
         <label for='newBid'>Please enter Bid at or higher than Min Bid</label><br
         />
         <input
