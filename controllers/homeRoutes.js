@@ -9,16 +9,22 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: Bid,
-          attributes: ["id", "bidder_id"],
+          attributes: ['id', 'bidder_id'],
         },
-           {
-             model: Image,
-             attributes: ["url"],
-           }
+        {
+          model: Image,
+          attributes: ['url'],
+        },
       ],
     });
 
-    const cars = carData.map((car) => car.get({ plain: true }));
+    const cars = carData.map((car) => {
+      const images = car.images || [];
+      return {
+        ...car.get({ plain: true }),
+        img_url: (images[0] || {}).url,
+      };
+    });
     console.log(cars);
 
     res.render('auctionPage', {
@@ -32,22 +38,20 @@ router.get('/', async (req, res) => {
 
 router.get('/cars/:id', async (req, res) => {
   try {
-    const carData = await Car.findByPk(req.params.id
-      // , {
-      // include: [
-      //   {
-      //     model: Bid,
-      //     attributes: ["bidder_id", "seller_id"],
-      //   },
-      // ],
-    // }
-    );
+    const carData = await Car.findByPk(req.params.id, {
+      include: [
+        {
+          model: Image,
+          attributes: ['url'],
+        },
+      ],
+    });
 
     const car = carData.get({ plain: true });
 
     res.render('bidPage', {
       ...car,
-      logged_in: req.session.logged_in,
+      logged_in: true,
     });
   } catch (err) {
     res.status(500).json(err);

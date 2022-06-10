@@ -51,7 +51,7 @@ Car.init(
     },
     //end time for bids
     time_end: {
-      type: DataTypes.DATE
+      type: DataTypes.DATE,
     },
     seller_id: {
       type: DataTypes.INTEGER,
