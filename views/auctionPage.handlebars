@@ -25,9 +25,7 @@
       <ul>
         {{#if current_bid}}
           <li>
-            Current Bid:<span class='current_bid'>{{format_dinero
-                car.bids.bid
-              }}</span>
+            Current Bid:<span class='current_bid'>{{format_dinero bid_val}}</span>
           </li>
         {{else}}
           <li>
