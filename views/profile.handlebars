@@ -39,10 +39,12 @@
       </tr>
       {{#each bids as |bid|}}
       <tr>
-        <td class='profileTitle'>{{bid.car.title}}</td>
+        <a href='/cars/{{car.id}}'>
+        <td class='profileTitle'><a href='/cars/{{car.id}}'>{{bid.car.title}}</a></td>
         <td class='lot_id'>Lot ID# {{bid.car_id}}</td>
         <td class='status'>{{format_dinero bid.bid}}</td>
         <td class='time_left'>{{bid.timestamp}}</td>
+        
       </tr>
       {{/each}}
     </table>

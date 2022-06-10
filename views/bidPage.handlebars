@@ -70,9 +70,7 @@
       <h1>Bidding Details</h1>
       <ul>
         {{#if current_bid}}
-          <li>Current Bid:<span class='current_bid'>{{
-                bid
-              }}</span></li>
+          <li>Current Bid:<span class='current_bid'>{{topBid.bid}}</span></li>
         {{else}}
           <li>Current Bid:<span class='current_bid' value='0'>{{format_dinero
                 starting_bid

@@ -57,6 +57,7 @@ router.get('/cars/:id', withAuth, async (req, res) => {
   //sort bids in descending order
     const car = carData.get({ plain: true });
     car.bids = car.bids.sort((a, b) => b.bid - a.bid)
+    
 
     console.log(car.bids);
 
@@ -75,7 +76,13 @@ router.get('/profile', withAuth, async (req, res) => {
   try {
     const bidderData = await Bidder.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Bid, include: [{ model: Car, }] }]
+      include: [{ 
+        model: Bid,
+        include: [{ 
+          model: Car, 
+          attributes: ['id', 'title'],
+        }]
+      }]
     });
 
     const bidder = bidderData.get({ plain: true });
