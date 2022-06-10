@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: Bid,
-          attributes: ['id', 'bidder_id'],
+          attributes: ['id', 'bidder_id', 'bid'],
         },
         {
           model: Image,
@@ -20,11 +20,14 @@ router.get('/', async (req, res) => {
 
     const cars = carData.map((car) => {
       const images = car.images || [];
+      const bids = car.bids || [];
       return {
         ...car.get({ plain: true }),
         img_url: (images[0] || {}).url,
+        bid_val: (bids[bids.length - 1] || {}).bid,
       };
     });
+
     console.log(cars);
 
     res.render('auctionPage', {

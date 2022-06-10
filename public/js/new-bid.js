@@ -13,11 +13,11 @@ const createBid = async (event) => {
 
   const reqBid = currBid + bidInc;
 
-  // console.log(bid);
-  // console.log(car_id);
-  // console.log(currBid);
-  // console.log(bidInc);
-  // console.log(reqBid);
+  console.log(bid);
+  console.log(car_id);
+  console.log(currBid);
+  console.log(bidInc);
+  console.log(reqBid);
 
   if (bid >= reqBid) {
     const response = await fetch('/api/bids', {
@@ -26,10 +26,16 @@ const createBid = async (event) => {
       headers: { 'Content-Type': 'application/json' },
     });
 
+    const secondResponse = await fetch(`/api/cars/${car_id}`, {
+      method: 'PUT',
+      // body: JSON.stringify({}),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
     console.log(bid);
     console.log(car_id);
 
-    if (response.ok) {
+    if (response.ok && secondResponse.ok) {
       document.location.replace('/');
     } else {
       alert(response.statusText);
