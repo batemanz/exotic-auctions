@@ -47,20 +47,25 @@ router.get('/cars/:id', async (req, res) => {
           model: Image,
           attributes: ['url'],
         },
+        //include bid inquiry
         {
           model: Bid,
-          attributes: ['bid', 'bidder_id'],
-        },
+        }
       ],
     });
 
+  //sort bids in descending order
     const car = carData.get({ plain: true });
+    car.bids = car.bids.sort((a, b) => b.bid - a.bid)
+
+    console.log(car.bids);
 
     res.render('bidPage', {
       ...car,
       logged_in: true,
     });
   } catch (err) {
+    console.error(err)
     res.status(500).json(err);
   }
 });
