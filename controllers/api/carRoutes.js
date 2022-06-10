@@ -21,7 +21,7 @@ router.put('/:id', async (req, res) => {
     console.log(req.session);
 
     const updatedVehicle = await Car.update(
-      { current_bid: req.session.user_id, },
+      { current_bid: req.session.bidder_id, },
       {
         where: { id: req.params.id, },
       }

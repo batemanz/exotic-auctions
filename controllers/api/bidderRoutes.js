@@ -9,7 +9,6 @@ router.post('/', async (req, res) => {
     req.session.save(() => {
       req.session.user_id = bidderData.id;
       req.session.logged_in = true;
-      req.session.bidder_id = bidderData.id;
 
       res.status(200).json(bidderData);
     });
