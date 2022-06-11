@@ -58,7 +58,7 @@ router.get('/cars/:id', withAuth, async (req, res) => {
     const car = carData.get({ plain: true });
     car.bids = car.bids.sort((a, b) => b.bid - a.bid)
     
-    car.current_bid = car.bids[0].bid;
+    car.current_bid = car?.bids?.[0]?.bid;
     console.log(car.bids);
 
     res.render('bidPage', {
