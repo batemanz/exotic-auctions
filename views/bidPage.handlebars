@@ -80,12 +80,21 @@
             class='bid_increment'
             value='{{bid_increment}}'
           >{{format_dinero bid_increment}}</span></li>
+        {{#if current_bid}}
         <li>Min Bid:<span
             class='min_bid'
             id='minBid'
             value='({{starting_bid}}+{{bid_increment}})'
+          >({{format_dinero current_bid}}
+            + {{format_dinero bid_increment}})</span></li>
+        {{else}}
+        li>Min Bid:<span
+            class='min_bid'
+            id='minBid'
+            value='({{starting_bid}}+{{bid_increment}})'
           >({{format_dinero starting_bid}}
-            +{{format_dinero bid_increment}})</span></li>
+            + {{format_dinero bid_increment}})</span></li>
+        {{/if}}
         <li>Time Remaining:<span class='time_remaining'></span></li>
       </ul>
       <button class='bidHistoryBtn' onclick="showHistory()">Bid History</button>

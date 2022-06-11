@@ -6,7 +6,7 @@
       class='column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-fifth-fullhd bidCard'
     >
       <a href='/cars/{{car.id}}'><img src='{{img_url}}' style='width:100%' /></a>
-      <h4 class='lotID'>lot ID #</h4>
+      <h4 class='lotID'>lot ID #{{car.id}}</h4>
       <h1 class='cardTitle' style='text-decoration: none'>
         <a href='/cars/{{car.id}}'>{{car.title}}</a>
       </h1>
@@ -21,15 +21,21 @@
           </li>
         {{/if}}
         <li>
-          Min Bid:<span class='min_bid'>{{format_dinero
-              car.starting_bid
-            }}</span>
-        </li>
-        <li>
           Bid Increment:<span class='bid_increment'>{{format_dinero
               car.bid_increment
             }}</span>
         </li>
+        {{#if current_bid}}
+        <li>
+          Min Bid:<span class='min_bid'>({{format_dinero bid_val}}
+            + {{format_dinero bid_increment}})</span>
+        </li>
+        {{else}}
+        <li>
+          Min Bid:<span class='min_bid'>({{format_dinero starting_bid}}
+            + {{format_dinero bid_increment}})</span>
+        </li>
+        {{/if}}
         <li>
           Time Remaining:<span
             id='time-left-{{car.id}}'

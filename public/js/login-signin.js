@@ -23,7 +23,7 @@ const signInFormHandler = async (event) => {
   event.preventDefault();
 
   const name = document.querySelector('#newName').value.trim();
-  const email = document.querySelector('#newUsername').value.trim();
+  const email = document.querySelector('#newEmail').value.trim();
   const password = document.querySelector('#newPswrd').value.trim();
 
   if (name && email && password) {
