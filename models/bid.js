@@ -28,7 +28,7 @@ Bid.init(
       },
     },
     timestamp: {
-      type: DataTypes.DATE, //TODO: Look at model that has timestamp.
+      type: DataTypes.DATE,
       defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
     },
     bid: {

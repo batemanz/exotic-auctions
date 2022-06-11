@@ -57,6 +57,7 @@ router.get('/cars/:id', async (req, res) => {
     const car = carData.get({ plain: true });
     car.bids = car.bids.sort((a, b) => b.bid - a.bid)
 
+    car.current_bid = car.bids[0].bid;
     console.log(car.bids);
 
     res.render('bidPage', {
@@ -74,9 +75,30 @@ router.get('/profile', withAuth, async (req, res) => {
   try {
     const bidderData = await Bidder.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
+      include: [{ 
+        model: Bid,
+        include: [{ 
+          model: Car, 
+          attributes: ['id', 'title'],
+        }]
+      }]
     });
 
+    //serializes data
     const bidder = bidderData.get({ plain: true });
+    console.log("bidder", bidder);
+
+    //Looping over each element of the bidder.bids array
+    //it queries the database to find the car by id and inserts that data into element.
+    for(const bid of bidder.bids) {
+      const carData = await Car.findByPk(bid.car_id);
+      const carDataFormatted = carData.get({ plain: true })
+      bid.car = carDataFormatted;
+    };
+
+
+    // console.log(Bid);
+    console.log("bidder", bidder.bids);
 
     res.render('profile', {
       ...bidder,
