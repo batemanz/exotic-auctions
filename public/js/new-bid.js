@@ -9,13 +9,6 @@ const createBid = async (event) => {
   const bidInc = Number(data.get('bidInc')) || 0
   const reqBid = currBid + bidInc
 
-  console.log(data);
-  console.log(car_id);
-  console.log(bid);
-  console.log(currBid);
-  console.log(bidInc);
-  console.log(reqBid);
-
   if (bid >= reqBid) {
     const response = await fetch('/api/bids', {
       method: 'POST',
@@ -28,10 +21,6 @@ const createBid = async (event) => {
       body: JSON.stringify({ }),
       headers: { 'Content-Type': 'application/json' },
     });
-
-    console.log(secondResponse);
-    console.log(bid);
-    console.log(car_id);
 
     if (response.ok && secondResponse.ok) {
       document.location.replace('/');

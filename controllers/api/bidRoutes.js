@@ -7,7 +7,6 @@ router.post('/', withAuth, async (req, res) => {
   try {
     const newBid = await Bid.create({
       ...req.body,
-      //use logged in user_id
       bidder_id: req.session.user_id,
     });
     res.status(200).json(newBid);

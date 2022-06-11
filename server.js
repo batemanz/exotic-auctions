@@ -18,7 +18,7 @@ const sess = {
   secret: process.env.SESSION_SECRET,
   cookie: {
     // 30 minutes * 60 seconds * 1000 milliseconds //
-    maxAge: 900000,
+    maxAge: 3600000,
   },
   resave: false,
   saveUninitialized: true,
