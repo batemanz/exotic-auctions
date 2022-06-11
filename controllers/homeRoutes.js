@@ -72,7 +72,6 @@ router.get('/cars/:id', withAuth, async (req, res) => {
 });
 
 router.get('/profile', withAuth, async (req, res) => {
-  //temp test
   try {
     const bidderData = await Bidder.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
@@ -96,14 +95,6 @@ router.get('/profile', withAuth, async (req, res) => {
       const carDataFormatted = carData.get({ plain: true })
       bid.car = carDataFormatted;
     };
-
-
-    // console.log(Bid);
-    console.log("bidder", bidder.bids);
-
-
-    // console.log(Bid);
-    console.log(bidder);
 
     res.render('profile', {
       ...bidder,
