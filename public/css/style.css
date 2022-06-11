@@ -40,6 +40,14 @@ a {
   color:white;
 }
 
+/* hovering over text */
+a:hover {
+  color:white;
+  transform: scale (.5);
+  text-shadow: 0px 0px 8px white;
+  transition: all 0.1s ease-in-out;
+}
+
 .mainTitle {
 color:white;
 background:#717171;
@@ -167,6 +175,7 @@ ul {
 .bidCard {
   text-align:center;
   border: black solid 2px;
+  background-image: linear-gradient(#e5d529bb, #9fc334bb);
   border-radius: 20px;
   /* max-width:fit-content; */
   padding:8px;
@@ -213,6 +222,14 @@ ul {
 .loginDiv {
  text-align:center;
  margin-top:30%;
+}
+
+.no-button {
+  text-decoration: none;
+  background: none;
+  padding: 0;
+  border-style: none;
+  font-family: Verdana, sans-serif;
 }
 
 /* Added so signin form would also be styled */

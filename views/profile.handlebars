@@ -1,17 +1,7 @@
 <div>
-  <nav>
-    <ul>
-      <li class='navProfile'>
-        <a href='/'>Auction Page</a>
-      </li>
-      <li class='navProfile'>
-        <a href=''>logout</a>
-      </li>
-    </ul>
-  </nav>
   <div class='columns is-mobile is-centered is-multiline titlesBHistory'>
     <h2 class='column is-full mainTitle'>Profile</h2>
-    <h1 class='column is-full'>Active Bids</h1>
+    <h1 class='column is-full'>{{name}}'s Bid History</h1>
   </div>
   <div class='columns is-mobile is-centered'>
     <table>
@@ -21,24 +11,16 @@
         <th>Status</th>
         <th>Time Left</th>
       </tr>
+      {{#each bids as |bid|}}
       <tr>
-        <td class='profileTitle'>2017 Nissan GTR</td>
-        <td class='lot_id'>Lot ID# 004</td>
-        <td class='status'>Winning!</td>
-        <td class='time_left'>3d, 9h, 15m</td>
+        <a href='/cars/{{car.id}}'>
+        <td class='profileTitle'><a href='/cars/{{car.id}}'>{{car.title}}</a></td>
+        <td class='lot_id'>Lot ID# {{bid.car_id}}</td>
+        <td class='status'>{{format_dinero bid.bid}}</td>
+        <td class='time_left'>{{bid.timestamp}}</td>
+        
       </tr>
-      <tr>
-        <td class='profileTitle'>1969 Chevrolet Camero</td>
-        <td class='lot_id'>Lot ID# 005</td>
-        <td class='status'>Out Bid!</td>
-        <td>3d, 9h, 22m</td>
-      </tr>
-      <tr>
-        <td class='profileTitle'>2017 Kawaski Ninja ZX-6R</td>
-        <td class='lot_id'>Lot ID# 012</td>
-        <td class='status'>Winning!</td>
-        <td class='time_left'>Closed</td>
-      </tr>
+      {{/each}}
     </table>
   </div>
 </div>

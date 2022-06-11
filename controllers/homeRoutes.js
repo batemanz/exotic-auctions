@@ -27,6 +27,7 @@ router.get('/', async (req, res) => {
         bid_val: (bids[bids.length - 1] || {}).bid,
       };
     });
+
     console.log(cars);
 
     res.render('auctionPage', {
@@ -38,7 +39,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/cars/:id', async (req, res) => {
+router.get('/cars/:id', withAuth, async (req, res) => {
   try {
     const carData = await Car.findByPk(req.params.id, {
       include: [
@@ -56,7 +57,7 @@ router.get('/cars/:id', async (req, res) => {
   //sort bids in descending order
     const car = carData.get({ plain: true });
     car.bids = car.bids.sort((a, b) => b.bid - a.bid)
-
+    
     car.current_bid = car.bids[0].bid;
     console.log(car.bids);
 
@@ -71,7 +72,6 @@ router.get('/cars/:id', async (req, res) => {
 });
 
 router.get('/profile', withAuth, async (req, res) => {
-  //temp test
   try {
     const bidderData = await Bidder.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
@@ -95,10 +95,6 @@ router.get('/profile', withAuth, async (req, res) => {
       const carDataFormatted = carData.get({ plain: true })
       bid.car = carDataFormatted;
     };
-
-
-    // console.log(Bid);
-    console.log("bidder", bidder.bids);
 
     res.render('profile', {
       ...bidder,
