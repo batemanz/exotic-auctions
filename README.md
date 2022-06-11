@@ -3,7 +3,7 @@
 ![License](https://img.shields.io/badge/license-MIT_License-red.svg)
 
 ## Description:
-
+Are you are looking to buy an exotic Ferrari, an understated Jaguar, or a luxurious Rolls-Royce? Our exotic car auction has many of exotic and luxury vehicles available for auction. Copart's exotic car inventory is great for finding project cars or new cars at a great price.
 
 
 ## Table of Contents:
@@ -20,7 +20,7 @@
 
 - [Link to Application of Github](#link-to-application-on-github)
 
-- [Link to Walkthrough Video](#link-to-walkthrough-video)
+- [Link to Deployed Application](#link-to-deployed-application)
 
 - [Database Model](#database-model)
 
@@ -44,21 +44,20 @@
 
 
 ## Link to Application on Github:
+[Github Link](https://github.com/batemanz/exotic-car-auctions)
 
 
-
-## Link to Walkthrough Video:
-
+## Link to Deployed Application:
+[Application link](https://exotic-car-auction-abln.herokuapp.com/)
 
 
 ## Database Model:
 
 
 
-
 ## Questions:
 
-For additional questions, reach out to me:
+For additional questions, reach out to the team:
 
 Github: 
 
