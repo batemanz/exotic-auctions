@@ -14,7 +14,7 @@ Are you are looking to buy an exotic Ferrari, an understated Jaguar, or a luxuri
 
 - [Installation Instructions](#installation-instructions)
 
-- [Mock Up](#mock-up)
+- [Screenshot of Application](#screenshot-of-application)
 
 - [Link to Application of Github](#link-to-application-on-github)
 
@@ -49,7 +49,7 @@ Then I can view a list of my bids
 - Used Node.js and [Express.js](https://expressjs.com/) to create a RESTful API.
 - Used [Handlebars.js](https://handlebarsjs.com/) as the template engine.
 
-## Mock Up:
+## Screenshot of Application:
 Here is an image of the Auction Site! ![Auction Site](./images/AuctionSite.png)
 
 
