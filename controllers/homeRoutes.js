@@ -58,7 +58,7 @@ router.get('/cars/:id', withAuth, async (req, res) => {
     const car = carData.get({ plain: true });
     car.bids = car.bids.sort((a, b) => b.bid - a.bid)
     
-
+    car.current_bid = car.bids[0].bid;
     console.log(car.bids);
 
     res.render('bidPage', {
@@ -87,7 +87,8 @@ router.get('/profile', withAuth, async (req, res) => {
 
     const bidder = bidderData.get({ plain: true });
 
-    console.log(bidder);
+    // console.log(Bid);
+    // console.log(bidder);
 
     res.render('profile', {
       ...bidder,
