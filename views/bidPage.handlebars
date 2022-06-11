@@ -70,25 +70,32 @@
       <h1>Bidding Details</h1>
       <ul>
         {{#if current_bid}}
-          <li>Current Bid:<span class='current_bid' id='currBid'>{{format_dinero
-                current_id
+          <li>Current Bid:<span class='current_bid'>{{
+                bid
               }}</span></li>
         {{else}}
-          <li>Current Bid:<span class='current_bid' id='currBid' value='0'>
-              No current bids...</span></li>
+          <li>Current Bid:<span class='current_bid' value='0'>{{format_dinero
+                starting_bid
+              }}</span></li>
         {{/if}}
-        <li>Min Bid:<span class='min_bid' id='minBid'></span></li>
+        {{!-- <li>Min Bid:<span
+            class='min_bid'
+            id='minBid'
+            value='({{starting_bid}}+{{bid_increment}})'
+          >({{format_dinero starting_bid}}+{{fomat_dinero bid_increment}})</span></li> --}}
         <li>Bid Increment:<span
             class='bid_increment'
-            id='bidInc'
+            {{! id='bidInc' }}
+            value='{{bid_increment}}'
           >{{format_dinero bid_increment}}</span></li>
         <li>Time Remaining:<span class='time_remaining'></span></li>
       </ul>
-      <button class='bidHistoryBtn'>Bid History</button>
+      <button class='bidHistoryBtn' onclick="showHistory()">Bid History</button>
 
       <form action=''>
         <input type='hidden' name='car-id' value='{{id}}' />
         <input type='hidden' name='bidInc' value='{{bid_increment}}' />
+        <input type='hidden' name='currBid' value='{{current_bid}}' />
         <label for='newBid'>Please enter Bid at or higher than Min Bid</label><br
         />
         <input
@@ -101,6 +108,38 @@
         <button class='signUpBtn' type='submit'>Submit</button>
       </form>
     </div>
+  </div>
+</div>
+
+<div class="modal bid-history-modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title" style="color: white;">Bid History</p>
+      <button class="delete" onclick="closeHistory()" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Bid</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each bids as |bid|}}
+            <tr>
+              {{#if bid.timestamp}}
+                <td>{{format_date bid.timestamp}}</td>
+              {{else}}
+                <td>undefined</td>
+              {{/if}}
+              <td>{{format_dinero bid.bid}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </section>
   </div>
 </div>
 

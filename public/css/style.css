@@ -30,6 +30,49 @@ h1 {
   font-weight:bolder;
   text-decoration:underline;
 }
+
+h2 {
+font-size:28px;
+font-weight:bold;
+}
+
+a {
+  color:white;
+}
+
+.mainTitle {
+color:white;
+background:#717171;
+border-radius:8px;
+margin:20px;
+}
+
+.navProfile {
+background-image: radial-gradient(black, teal, rgb(255, 106, 131));
+margin:8px;
+border-radius:8px;
+}
+
+table, th, td {
+  border: 1px solid white;
+  padding:6px;
+  margin:6px;
+  text-align:center;
+}
+
+td {
+  color:#e5d529;
+  background:rgb(67, 67, 67);
+}
+
+th {
+  background:#717171;
+}
+
+.titlesBHistory {
+  text-align:center;
+}
+
 .mySlides {
   display: none;
 }

@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: Bid,
-          attributes: ['id', 'bidder_id'],
+          attributes: ['id', 'bidder_id', 'bid'],
         },
         {
           model: Image,
@@ -20,9 +20,11 @@ router.get('/', async (req, res) => {
 
     const cars = carData.map((car) => {
       const images = car.images || [];
+      const bids = car.bids || [];
       return {
         ...car.get({ plain: true }),
         img_url: (images[0] || {}).url,
+        bid_val: (bids[bids.length - 1] || {}).bid,
       };
     });
     console.log(cars);
@@ -44,16 +46,25 @@ router.get('/cars/:id', async (req, res) => {
           model: Image,
           attributes: ['url'],
         },
+        //include bid inquiry
+        {
+          model: Bid,
+        }
       ],
     });
 
+  //sort bids in descending order
     const car = carData.get({ plain: true });
+    car.bids = car.bids.sort((a, b) => b.bid - a.bid)
+
+    console.log(car.bids);
 
     res.render('bidPage', {
       ...car,
       logged_in: true,
     });
   } catch (err) {
+    console.error(err)
     res.status(500).json(err);
   }
 });
