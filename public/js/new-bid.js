@@ -16,10 +16,19 @@ const createBid = async (event) => {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    if (response.ok) {
+    const secondResponse = await fetch(`/api/cars/${car_id}`, {
+      method: 'PUT',
+      body: JSON.stringify({ }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.ok && secondResponse.ok) {
       document.location.replace('/');
-    } else {
-      alert(response.statusText);
+      alert('success!');
+    } else if (response.ok) {
+      alert('Only the bid worked!');
+    } else if (secondResponse.ok) {
+      alert('Only the car update worked!');
     }
   } else {
     alert('Invalid bid! Please re-enter your bid!');

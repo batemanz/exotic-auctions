@@ -1,8 +1,6 @@
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
-  console.log('Successfully logged in!');
-
   const email = document.querySelector('#username').value.trim();
   const password = document.querySelector('#pswrd').value.trim();
 
@@ -24,10 +22,8 @@ const loginFormHandler = async (event) => {
 const signInFormHandler = async (event) => {
   event.preventDefault();
 
-  console.log('Successfully signed in!');
-
   const name = document.querySelector('#newName').value.trim();
-  const email = document.querySelector('#newUsername').value.trim();
+  const email = document.querySelector('#newEmail').value.trim();
   const password = document.querySelector('#newPswrd').value.trim();
 
   if (name && email && password) {
