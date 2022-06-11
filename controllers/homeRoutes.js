@@ -85,10 +85,25 @@ router.get('/profile', withAuth, async (req, res) => {
       }]
     });
 
+    //serializes data
     const bidder = bidderData.get({ plain: true });
+    console.log("bidder", bidder);
+
+    //Looping over each element of the bidder.bids array
+    //it queries the database to find the car by id and inserts that data into element.
+    for(const bid of bidder.bids) {
+      const carData = await Car.findByPk(bid.car_id);
+      const carDataFormatted = carData.get({ plain: true })
+      bid.car = carDataFormatted;
+    };
+
 
     // console.log(Bid);
-    // console.log(bidder);
+    console.log("bidder", bidder.bids);
+
+
+    // console.log(Bid);
+    console.log(bidder);
 
     res.render('profile', {
       ...bidder,

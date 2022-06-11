@@ -40,7 +40,7 @@
       {{#each bids as |bid|}}
       <tr>
         <a href='/cars/{{car.id}}'>
-        <td class='profileTitle'><a href='/cars/{{car.id}}'>{{bid.car.title}}</a></td>
+        <td class='profileTitle'><a href='/cars/{{car.id}}'>{{car.title}}</a></td>
         <td class='lot_id'>Lot ID# {{bid.car_id}}</td>
         <td class='status'>{{format_dinero bid.bid}}</td>
         <td class='time_left'>{{bid.timestamp}}</td>
