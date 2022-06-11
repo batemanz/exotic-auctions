@@ -1,1 +1,26 @@
-This will be the profile page!
+<div>
+  <div class='columns is-mobile is-centered is-multiline titlesBHistory'>
+    <h2 class='column is-full mainTitle'>Profile</h2>
+    <h1 class='column is-full'>{{name}}'s Bid History</h1>
+  </div>
+  <div class='columns is-mobile is-centered'>
+    <table>
+      <tr>
+        <th>Item</th>
+        <th>Lot Id#</th>
+        <th>Bid Amount</th>
+        <th>Timestamp</th>
+      </tr>
+      {{#each bids as |bid|}}
+      <tr>
+        <a href='/cars/{{car.id}}'>
+        <td class='profileTitle'><a href='/cars/{{car.id}}'>{{car.title}}</a></td>
+        <td class='lot_id'>Lot ID# {{bid.car_id}}</td>
+        <td class='status'>{{format_dinero bid.bid}}</td>
+        <td class='time_left'>{{bid.timestamp}}</td>
+        
+      </tr>
+      {{/each}}
+    </table>
+  </div>
+</div>

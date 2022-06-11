@@ -1,50 +1,50 @@
 [
-    {
-        "title": "2022 Rolls Royce Phantom",
-        "vin": "NV123455",
-        "miles": 17,
-        "fuel_type": "Gas",
-        "transmission": "Automatic",
-        "engine": "6.7 L V12",
-        "starting_bid": 250000,
-        "bid_increment": 100,
-        "time_end": "2022-07-01 05:30:00",
-        "seller_id": 1
-    },
-    {
-        "title": "2021 Mercedes-Benz AMG GT",
-        "vin": "AN123456",
-        "miles": 10000,
-        "fuel_type": "Gas",
-        "transmission": "Automatic",
-        "engine": "4.0 L V8",
-        "starting_bid": 75000,
-        "bid_increment": 100,
-        "time_end": "2022-07-02 05:30:00",
-        "seller_id": 2
-    },
-    {
-        "title": "1969 Chevrolet Camaro",
-        "vin": "YXN12345",
-        "miles": 92000,
-        "fuel_type": "Gas",
-        "transmission": "Manual",
-        "engine": "3.8 L V6",
-        "starting_bid": 49000,
-        "bid_increment": 100,
-        "time_end": "2022-07-01 08:30:00",
-        "seller_id": 3
-    },
-    {
-        "title": "2017 Nissan GTR",
-        "vin": "LN123X456",
-        "miles": 85000,
-        "fuel_type": "Gas",
-        "transmission": "Automatic",
-        "engine": "3.8 L V6",
-        "starting_bid": 80000,
-        "bid_increment": 100,
-        "time_end": "2022-07-02 06:30:00",
-        "seller_id": 1
-    }
+  {
+    "title": "2022 Rolls Royce Phantom",
+    "vin": "NV123455",
+    "miles": 17,
+    "fuel_type": "Gas",
+    "transmission": "Automatic",
+    "engine": "6.7 L V12",
+    "starting_bid": 250000,
+    "bid_increment": 100,
+    "time_end": "2022-07-01 05:30:00",
+    "seller_id": 1
+  },
+  {
+    "title": "2021 Mercedes-Benz AMG GT",
+    "vin": "AN123456",
+    "miles": 10000,
+    "fuel_type": "Gas",
+    "transmission": "Automatic",
+    "engine": "4.0 L V8",
+    "starting_bid": 75000,
+    "bid_increment": 100,
+    "time_end": "2022-07-02 05:30:00",
+    "seller_id": 2
+  },
+  {
+    "title": "1969 Chevrolet Camaro",
+    "vin": "YXN12345",
+    "miles": 92000,
+    "fuel_type": "Gas",
+    "transmission": "Manual",
+    "engine": "3.8 L V6",
+    "starting_bid": 49000,
+    "bid_increment": 100,
+    "time_end": "2022-07-01 08:30:00",
+    "seller_id": 3
+  },
+  {
+    "title": "2017 Nissan GTR",
+    "vin": "LN123X456",
+    "miles": 85000,
+    "fuel_type": "Gas",
+    "transmission": "Automatic",
+    "engine": "3.8 L V6",
+    "starting_bid": 80000,
+    "bid_increment": 100,
+    "time_end": "2022-07-02 06:30:00",
+    "seller_id": 1
+  }
 ]

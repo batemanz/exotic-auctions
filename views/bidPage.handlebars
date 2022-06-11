@@ -1,5 +1,5 @@
 <header>Bidding Details Page</header>
-<nav>
+{{!-- <nav>
   <ul class='columns is-mobile is-centered is-multiline'>
     <li class='column'>
       <a href='/profile'>Profile</a>
@@ -11,36 +11,36 @@
       <a href=''>logout</a>
     </li>
   </ul>
-</nav>
+</nav> --}}
 
 <div>
   <div class='slideshow-container'>
     <div class='mySlides fade'>
       <div class='numbertext'>1 / 4</div>
-      <img src='../images/edit-2136.jpg' style='width: 100%' />
+      <img src='{{car.img_url}}' style='width: 100%' />
       <div class='text'>{{title}}</div>
     </div>
 
     <div class='mySlides fade'>
       <div class='numbertext'>2 / 4</div>
-      <img src='../images/edit-2137.jpg' style='width: 100%' />
+      <img src='{{car.img_url}}' style='width: 100%' />
       <div class='text'>2017 Kawasaki Ninja ZX-6R 636</div>
     </div>
 
     <div class='mySlides fade'>
       <div class='numbertext'>3 / 4</div>
-      <img src='../images/edit-2147.jpg' style='width: 100%' />
+      <img src='{{car.img_url}}' style='width: 100%' />
       <div class='text'>2017 Kawasaki Ninja ZX-6R 636</div>
     </div>
 
     <div class='mySlides fade'>
       <div class='numbertext'>4 / 4</div>
-      <img src='../images/edit-2153.jpg' style='width: 100%' />
+      <img src='{{car.img_url}}' style='width: 100%' />
       <div class='text'>2017 Kawasaki Ninja ZX-6R 636</div>
     </div>
 
-    <a class='prev' onclick='plusSlides(-1)'>❮</a>
-    <a class='next' onclick='plusSlides(1)'>❯</a>
+    <a class='prev' id='plusSlides(-1)' onclick='plusSlides(-1)'>❮</a>
+    <a class='next' id='plusSlides(1)' onclick='plusSlides(1)'>❯</a>
   </div>
   <br />
 
@@ -66,23 +66,91 @@
     </div>
   </div>
   <div class='column is-narrow bidCardContainer'>
-    <div class='bidPageCard'>
+    <div class='bidPageCard biddingForm'>
       <h1>Bidding Details</h1>
       <ul>
-        <li>Current Bid:<span class='current_bid'></span></li>
-        <li>Min Bid:<span class='min_bid'></span></li>
-        <li>Bid Increment:<span class='bid_increment'></span></li>
+        {{#if current_bid}}
+          <li>Current Bid:<span class='current_bid'>{{topBid.bid}}</span>{{format_dinero current_bid}}</li>
+        {{else}}
+          <li>Current Bid:<span class='current_bid' value='0'>{{format_dinero
+                starting_bid
+              }}</span></li>
+        {{/if}}
+        <li>Bid Increment:<span
+            class='bid_increment'
+            value='{{bid_increment}}'
+          >{{format_dinero bid_increment}}</span></li>
+        {{#if current_bid}}
+        <li>Min Bid:<span
+            class='min_bid'
+            id='minBid'
+            value='({{starting_bid}}+{{bid_increment}})'
+          >({{format_dinero current_bid}}
+            + {{format_dinero bid_increment}})</span></li>
+        {{else}}
+        li>Min Bid:<span
+            class='min_bid'
+            id='minBid'
+            value='({{starting_bid}}+{{bid_increment}})'
+          >({{format_dinero starting_bid}}
+            + {{format_dinero bid_increment}})</span></li>
+        {{/if}}
         <li>Time Remaining:<span class='time_remaining'></span></li>
       </ul>
-      <button class='bidHistoryBtn'>Bid History</button>
+      <button class='bidHistoryBtn' onclick="showHistory()">Bid History</button>
 
       <form action=''>
-        <label for='bid'>Please enter Bid at or higher than Min Bid</label><br
+        <input type='hidden' name='car-id' value='{{id}}' />
+        <input type='hidden' name='bidInc' value='{{bid_increment}}' />
+        {{#if current_bid}}
+        <input type='hidden' name='currBid' value='{{current_bid}}' />
+        {{else}}
+        <input type='hidden' name='currBid' value='{{starting_bid}}' />
+        {{/if}}
+        <label for='newBid'>Please enter Bid at or higher than Min Bid</label><br
         />
-        <input type='text' id='bid' name='bid' placeholder='Enter Bid' /><br
-        /><br />
-        <input type='submit' value='Submit' />
+        <input
+          type='text'
+          id='newBid'
+          name='newBid'
+          placeholder='Enter Bid'
+        /><br /><br />
+        <button class='signUpBtn' type='submit'>Submit</button>
       </form>
     </div>
   </div>
 </div>
+
+<div class="modal bid-history-modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title" style="color: white;">Bid History</p>
+      <button class="delete" onclick="closeHistory()" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Bid</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each bids as |bid|}}
+            <tr>
+              {{#if bid.timestamp}}
+                <td>{{format_date bid.timestamp}}</td>
+              {{else}}
+                <td>undefined</td>
+              {{/if}}
+              <td>{{format_dinero bid.bid}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </section>
+  </div>
+</div>
+
+<script src='/js/new-bid.js'></script>

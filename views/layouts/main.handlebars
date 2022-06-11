@@ -4,6 +4,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <script src="https://cdn.jsdelivr.net/npm/luxon@2.4.0/build/global/luxon.min.js" integrity="sha256-DIsAGD2EF8Qq2PCH9yzX/yt9FliJfWf+aGcdgR6tKwo=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/7d3d72b2a8.js" crossorigin="anonymous"></script>
     <link
       rel='stylesheet'
       href='https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css'
@@ -12,6 +13,25 @@
     <title>Exotic Car Auction</title>
   </head>
   <body>
+    <header>
+      <nav>
+        <ul class='columns is-mobile is-centered is-multiline'>
+          <li class='column' class="grow">
+            <a href='/profile'>Profile</a>
+          </li>
+          <li class='column'>
+            <a href='/'>Auction</a>
+          </li>
+          <li class='column'>
+      {{#if logged_in}}
+            <a id='logout'>Logout</a>
+      {{else}}
+            <a href='/login'>Login</a>
+      {{/if}}
+          </li>
+        </ul>
+      </nav>
+    </header>
     {{{body}}}
   </body>
   <script src='./js/bidPage.js'></script>

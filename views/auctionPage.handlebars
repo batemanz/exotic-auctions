@@ -1,53 +1,62 @@
-<nav>
-    <ul>
+<h2 class='column is-full mainTitle'>Welcome to the Show Floor!</h2>
+<div class='columns is-centered is-multiline is-mobile is-variable bidDetailsCont'>
+  {{#each cars as |car|}}
+    <div
+      {{!-- class='column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-fifth-fullhd bidCard' --}}
+      class='column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-fifth-fullhd bidCard'
+    >
+      <a href='/cars/{{car.id}}'><img src='{{img_url}}' style='width:100%' /></a>
+      <h4 class='lotID'>lot ID #{{car.id}}</h4>
+      <h1 class='cardTitle' style='text-decoration: none'>
+        <a href='/cars/{{car.id}}'>{{car.title}}</a>
+      </h1>
+      <ul>
+        {{#if current_bid}}
+          <li>
+            Current Bid:<span class='current_bid'>{{format_dinero bid_val}}</span>
+          </li>
+        {{else}}
+          <li>
+            Current Bid:<span class='current_bid'> No current bids... </span>
+          </li>
+        {{/if}}
         <li>
-            <a href="/profile">Profile</a>
+          Bid Increment:<span class='bid_increment'>{{format_dinero
+              car.bid_increment
+            }}</span>
         </li>
+        {{#if current_bid}}
         <li>
-            {{#if logged_in}}
-            <button id="logout">Logout</button>
-            {{else}}
-            <a href="/login">Login</a>
-            {{/if}}
+          Min Bid:<span class='min_bid'>({{format_dinero bid_val}}
+            + {{format_dinero bid_increment}})</span>
         </li>
-    </ul>
-</nav>
-<div class="columns is-multiline is-mobile is-variable bidCardContainer">
-    {{#each cars as |car|}}
-        <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-fifth-fullhd bidCard">
-            <img src="{{car.img_url}}" style="width:100%">
-            <h4 class="lotID">lot ID #</h4>
-            <h1 class="cardTitle">
-                <a href="/cars/{{car.id}}">{{car.title}}</a>
-            </h1>
-            <ul>
-                <li>
-                    Current Bid:<span class="current_bid">{{format_dinero car.current_bid}}</span>
-                </li>
-                <li>
-                    Min Bid:<span class="min_bid">{{format_dinero car.starting_bid }}</span>
-                </li>
-                <li>
-                    Bid Increment:<span class="bid_increment">{{format_dinero car.bid_increment }}</span>
-                </li>
-                <li>
-                    Time Remaining:<span id="time-left-{{car.id}}" class="time_remaining"></span>
-                </li>
-            </ul>
-            <form action="">
-                <label for="bid">Please enter Bid at or higher than Min Bid</label><br>
-                <input type="text" id="bid" name="bid" value="Enter Bid"><br><br>
-                <input class="button is-success" type="submit" value="Submit">
-            </form>
-            <script>
-                setInterval(() => {
-                    const el = document.getElementById('time-left-{{car.id}}')
-                    const endTime = luxon.DateTime.fromSeconds((new Date('{{car.time_end}}')).getTime() / 1000)
-                    const currTime = luxon.DateTime.fromSeconds((new Date()).getTime() / 1000)
-                    const diff = endTime.diff(currTime, ['days', 'hours', 'minutes', 'seconds'])
-                    el.innerText = `${diff.days}d, ${diff.hours}h, ${diff.minutes}m`
-                }, 1000)
-            </script>
-        </div>
-    {{/each}}
+        {{else}}
+        <li>
+          Min Bid:<span class='min_bid'>({{format_dinero starting_bid}}
+            + {{format_dinero bid_increment}})</span>
+        </li>
+        {{/if}}
+        <li>
+          Time Remaining:<span
+            id='time-left-{{car.id}}'
+            class='time_remaining'
+          ></span>
+        </li>
+      </ul>
+      <form action=''>
+        <label for='bid'>Please enter Bid at or higher than Min Bid</label><br
+        />
+        <input type='text' id='bid' name='bid' value='Enter Bid' /><br /><br />
+        <input class='button is-success' type='submit' value='Submit' />
+      </form>
+      <script>
+        setInterval(() => { const el = document.getElementById('time-left-{{car.id}}')
+        const endTime = luxon.DateTime.fromSeconds((new Date('{{car.time_end}}')).getTime()
+        / 1000) const currTime = luxon.DateTime.fromSeconds((new
+        Date()).getTime() / 1000) const diff = endTime.diff(currTime, ['days',
+        'hours', 'minutes', 'seconds']) el.innerText = `${diff.days}d,
+        ${diff.hours}h, ${diff.minutes}m` }, 1000)
+      </script>
+    </div>
+  {{/each}}
 </div>
